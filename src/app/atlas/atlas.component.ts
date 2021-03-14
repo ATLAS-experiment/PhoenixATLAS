@@ -4,8 +4,12 @@ import {
   PhoenixLoader,
   PhoenixMenuNode,
   PresetView,
+  StateManager,
 } from "phoenix-event-display";
 import { EventDisplayService } from "phoenix-ui-components";
+import { environment } from "../../environments/environment";
+import eventConfig from "../../event-config.json";
+import phoenixMenuConfig from "../../assets/files/config/atlas-config.json";
 
 @Component({
   selector: "atlas-experiment",
@@ -20,19 +24,14 @@ export class ATLASComponent implements OnInit {
 
   ngOnInit(): void {
     let defaultEvent: { eventFile: string; eventType: string };
-    // TODO Get default event from configuration
-    // if (environment?.singleEvent) {
-    //   defaultEvent = eventConfig;
-    // } else {
-    //   defaultEvent = {
-    //     eventFile: 'assets/files/JiveXML/JiveXML_336567_2327102923.xml',
-    //     eventType: 'jivexml',
-    //   };
-    // }
-    defaultEvent = {
-      eventFile: "assets/files/jive-xml/JiveXML_336567_2327102923.xml",
-      eventType: "jivexml",
-    };
+    if (environment?.singleEvent) {
+      defaultEvent = eventConfig;
+    } else {
+      defaultEvent = {
+        eventFile: "assets/files/jive-xml/JiveXML_336567_2327102923.xml",
+        eventType: "jivexml",
+      };
+    }
 
     // Define the configuration
     const configuration: Configuration = {
@@ -118,9 +117,8 @@ export class ATLASComponent implements OnInit {
 
     this.eventDisplay.getLoadingManager().addLoadListenerWithCheck(() => {
       this.loaded = true;
-      // TODO
-      // const stateManager = new StateManager();
-      // stateManager.loadStateFromJSON(phoenixMenuConfig);
+      const stateManager = new StateManager();
+      stateManager.loadStateFromJSON(phoenixMenuConfig);
     });
   }
 }
