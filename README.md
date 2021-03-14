@@ -1,27 +1,40 @@
-# PhoenixAtlas
+# Phoenix ATLAS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+An ATLAS version of [Phoenix](https://github.com/hsf/phoenix).
 
-## Development server
+## Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To setup, you will need [Node.js](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/en/docs/install/).
 
-## Code scaffolding
+To install yarn using npm package manager (which comes with Node.js).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+npm install --global yarn
+```
 
-## Build
+Once you have Node.js and yarn set up you can run this command to install the dependencies:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```sh
+yarn install
+```
 
-## Running unit tests
+To run in development mode:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
+yarn start
+```
 
-## Running end-to-end tests
+## Deployment
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+You can deploy Phoenix with the command:
 
-## Further help
+```sh
+yarn deploy
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This will put a built version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.\
+For example with the command: `rsync -avz docs/ your-server.net:path/to/website`
+
+## Useful guides
+
+* [Deploy with a specific event](./guides/deploy-specific-event.md)
