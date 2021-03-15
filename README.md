@@ -24,6 +24,8 @@ To run in development mode:
 yarn start
 ```
 
+This will start Phoenix ATLAS locally which you can access through the URL [http://localhost:4200](http://localhost:4200).
+
 ## Deployment
 
 You can deploy Phoenix with the command:
@@ -32,9 +34,11 @@ You can deploy Phoenix with the command:
 yarn deploy
 ```
 
-This will put a built version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.\
+This will put a static production/build version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.\
 For example with the command: `rsync -avz docs/ your-server.net:path/to/website`
 
 ## Useful guides
 
+* [Complete user guide](https://github.com/HSF/phoenix/blob/master/guides/users.md)
 * [Deploy with a specific event](./guides/deploy-specific-event.md)
+* [Include in a web blog or article](./guides/phoenix-iframe.md)
