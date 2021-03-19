@@ -46,4 +46,4 @@ testem.log
 Thumbs.db
 
 # build
-/docs
+docs/

@@ -1,23 +1,23 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import {
   Configuration,
   PhoenixLoader,
   PhoenixMenuNode,
   PresetView,
   StateManager,
-} from "phoenix-event-display";
-import { EventDisplayService } from "phoenix-ui-components";
-import { environment } from "../../environments/environment";
-import eventConfig from "../../event-config.json";
-import phoenixMenuConfig from "../../assets/files/config/atlas-config.json";
+} from 'phoenix-event-display';
+import { EventDisplayService } from 'phoenix-ui-components';
+import { environment } from '../../environments/environment';
+import eventConfig from '../../event-config.json';
+import phoenixMenuConfig from '../../assets/files/config/atlas-config.json';
 
 @Component({
-  selector: "atlas-experiment",
-  templateUrl: "./atlas.component.html",
+  selector: 'atlas-experiment',
+  templateUrl: './atlas.component.html',
   styleUrls: [],
 })
 export class ATLASComponent implements OnInit {
-  phoenixMenuRoot = new PhoenixMenuNode("Phoenix Menu", "phoenix-menu");
+  phoenixMenuRoot = new PhoenixMenuNode('Phoenix Menu', 'phoenix-menu');
   loaded = false;
 
   constructor(private eventDisplay: EventDisplayService) {}
@@ -28,8 +28,8 @@ export class ATLASComponent implements OnInit {
       defaultEvent = eventConfig;
     } else {
       defaultEvent = {
-        eventFile: "assets/files/jive-xml/JiveXML_336567_2327102923.xml",
-        eventType: "jivexml",
+        eventFile: 'assets/files/jive-xml/JiveXML_336567_2327102923.xml',
+        eventType: 'jivexml',
       };
     }
 
@@ -37,9 +37,9 @@ export class ATLASComponent implements OnInit {
     const configuration: Configuration = {
       eventDataLoader: new PhoenixLoader(),
       presetViews: [
-        new PresetView("Left View", [0, 0, -12000], "left-cube"),
-        new PresetView("Center View", [-500, 12000, 0], "top-cube"),
-        new PresetView("Right View", [0, 0, 12000], "right-cube"),
+        new PresetView('Left View', [0, 0, -12000], 'left-cube'),
+        new PresetView('Center View', [-500, 12000, 0], 'top-cube'),
+        new PresetView('Right View', [0, 0, 12000], 'right-cube'),
       ],
       defaultView: [4000, 0, 4000],
       // Set the phoenix menu to be used (defined above)
@@ -54,61 +54,61 @@ export class ATLASComponent implements OnInit {
 
     // Load detector geometries
     this.eventDisplay.loadOBJGeometry(
-      "assets/geometry/toroids.obj",
-      "Toroids",
+      'assets/geometry/toroids.obj',
+      'Toroids',
       0x8c8c8c,
       undefined,
       false,
       false
     );
     this.eventDisplay.loadOBJGeometry(
-      "assets/geometry/TRT.obj",
-      "TRT",
+      'assets/geometry/TRT.obj',
+      'TRT',
       0x356aa5,
       undefined,
       false
     );
     this.eventDisplay.loadOBJGeometry(
-      "assets/geometry/SCT.obj",
-      "SCT",
+      'assets/geometry/SCT.obj',
+      'SCT',
       0xfff400,
       undefined,
       false
     );
     this.eventDisplay.loadOBJGeometry(
-      "assets/geometry/pixel.obj",
-      "Pixel",
+      'assets/geometry/pixel.obj',
+      'Pixel',
       0x356aa5,
       undefined,
       false
     );
     this.eventDisplay.loadOBJGeometry(
-      "assets/geometry/LAR_Bar.obj",
-      "LAr Barrel",
+      'assets/geometry/LAR_Bar.obj',
+      'LAr Barrel',
       0x19ccd2,
       undefined,
       true,
       false
     );
     this.eventDisplay.loadOBJGeometry(
-      "assets/geometry/LAR_EC1.obj",
-      "LAr EC1",
+      'assets/geometry/LAR_EC1.obj',
+      'LAr EC1',
       0x19ccd2,
       undefined,
       true,
       false
     );
     this.eventDisplay.loadOBJGeometry(
-      "assets/geometry/LAR_EC2.obj",
-      "LAr EC2",
+      'assets/geometry/LAR_EC2.obj',
+      'LAr EC2',
       0x19ccd2,
       undefined,
       true,
       false
     );
     this.eventDisplay.loadOBJGeometry(
-      "assets/geometry/TileCal.obj",
-      "Tile Cal",
+      'assets/geometry/TileCal.obj',
+      'Tile Cal',
       0xc14343,
       undefined,
       true,

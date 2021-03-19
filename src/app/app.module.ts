@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PhoenixUIModule } from 'phoenix-ui-components';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,16 +8,13 @@ import { AppComponent } from './app.component';
 import { ATLASComponent } from './atlas/atlas.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ATLASComponent,
-  ],
+  declarations: [AppComponent, ATLASComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     PhoenixUIModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
