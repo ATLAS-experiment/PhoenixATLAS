@@ -6020,10 +6020,10 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-phoenix-event-display@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-1.4.0.tgz#f2d6136febb832b359a93750310144e211eae143"
-  integrity sha512-em5W2FEewt4LFHylxGFTHvefSA77Ck+3546NO/4nHgDggX5ONNZS1cVPcm4KnE0K3K+elr48rk+p2Q3KPMBkpQ==
+phoenix-event-display@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-1.5.0.tgz#5ae8cdb5d906131d712c0a35d45b906db14f4378"
+  integrity sha512-o1cXJI7eI52kNkDxCWaUQr5yJSHLBCdZ7FOUAz0KqFHB+OSk1Zm4vSx1UZDJZ/4L2D5H7WaOw5b2Jidxrf80ig==
   dependencies:
     "@tweenjs/tween.js" "^17.4.0"
     dat.gui "^0.7.7"
@@ -6031,10 +6031,10 @@ phoenix-event-display@^1.4.0:
     stats-js "^1.0.1"
     three "^0.124.0"
 
-phoenix-ui-components@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-1.4.3.tgz#fc5ddd3f70c3f381a031cbadad2d8625301dfb4a"
-  integrity sha512-DMx2sEpC1tRCGHIXCsr9Pn8iJiXOjJYihfDwlrjrbRdLAg/TFJFOh8EmVG/mcRI4XhEoQ33zINzXoAFMPnMFLA==
+phoenix-ui-components@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-1.5.0.tgz#dd8c61323c8a9d74b92c134e6ab85b974265613f"
+  integrity sha512-gnvKemCpThJzRuJ+8qlKbRP1fp7r20rjCJ818PwNm5/Rkeej8KWVaWGXQNhbgTNinKMss/4D/ImszgDrt29cxg==
   dependencies:
     "@angular-slider/ngx-slider" "^2.0.3"
     "@angular/cdk" "^11.1.1"
