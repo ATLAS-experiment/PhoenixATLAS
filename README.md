@@ -31,7 +31,7 @@ This will start Phoenix ATLAS locally which you can access through the URL [http
 You can deploy Phoenix with the command:
 
 ```sh
-yarn deploy
+yarn deploy:web
 ```
 
 This will put a static production/build version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.\
