@@ -35,7 +35,7 @@ Remember that this is using a local app, and so if you want to update the base c
 You can deploy Phoenix with the command:
 
 ```sh
-yarn deploy:web
+yarn deploy
 ```
 
 This will put a static production/build version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.\
