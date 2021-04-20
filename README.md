@@ -18,7 +18,7 @@ Once you have Node.js and yarn set up you can run this command to install the de
 yarn install
 ```
 
-(If you want to update the Phoenix version, make sure to edit package.json first)
+(If you want to update the Phoenix version, make sure to edit `package.json` first)
 
 To run in development mode:
 
@@ -27,6 +27,8 @@ yarn start
 ```
 
 This will start Phoenix ATLAS locally which you can access through the URL [http://localhost:4200](http://localhost:4200).
+
+Remember that this is using a local app, and so if you want to update the base configuration then you will need to edit this (i.e. if you want to change the geometry, or the configuration).
 
 ## Deployment
 
