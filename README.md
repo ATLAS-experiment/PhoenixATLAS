@@ -1,6 +1,6 @@
 # Phoenix ATLAS
 
-An ATLAS version of [Phoenix](https://github.com/hsf/phoenix).
+An ATLAS version of [Phoenix](https://github.com/hsf/phoenix). The live version is [here](https://phoenixatlas.web.cern.ch/PhoenixATLAS/)
 
 ## Setup
 
@@ -39,7 +39,7 @@ yarn deploy
 ```
 
 This will put a static production/build version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.\
-For example with the command: `rsync -avz docs/ your-server.net:path/to/website`
+For example with the command: `rsync -avz docs/ lxplus.cern.ch:/eos/project/h/hsf-phoenix/www/atlas`
 
 ## Useful guides
 
