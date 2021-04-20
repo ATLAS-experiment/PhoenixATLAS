@@ -18,6 +18,8 @@ Once you have Node.js and yarn set up you can run this command to install the de
 yarn install
 ```
 
+(If you want to update the Phoenix version, make sure to edit package.json first)
+
 To run in development mode:
 
 ```sh
