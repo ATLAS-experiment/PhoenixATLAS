@@ -264,6 +264,7 @@ export class ATLASComponent implements OnInit {
       this.loaded = true;
       const stateManager = new StateManager();
       stateManager.loadStateFromJSON(phoenixMenuConfig);
+      this.eventDisplay.animateClippingWithCollision(10000);
     });
   }
 }
