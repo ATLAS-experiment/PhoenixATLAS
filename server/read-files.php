@@ -1,22 +1,40 @@
 <?php
+// Do not report errors (comment for development).
+error_reporting(E_ERROR | E_PARSE);
 
-$directory = $_GET['directory'];
+// Associative array / dictionary for configuration.
+$config = array(
+  "directory" => './data'
+);
 
-if (strpos($directory, '/') !== false) {
-  http_response_code(401);
-  echo 'Invalid directory';
+// Read all files in the given directory. The directory is relative to this PHP script.
+function readAllFilesInDirectory($dir) {
+  $dirIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
+  $filesArray = array(); 
+  
+  foreach ($dirIterator as $path) {
+      if (!$path->isDir()){ 
+        $filesArray[] = $path->getPathname(); 
+      }
+  }
+
+  return $filesArray;
+}
+
+// Throw a 404 if the configured directory is not found.
+if (!is_dir($config['directory'])) {
+  http_response_code(404);
   return;
 }
 
-$filesAndDirectories = array("files" => array(), "directories" => array());
+// Base URL for making the request to get a file.
+$requestUrl = dirname($_SERVER['PHP_SELF']) . '/';
 
-$contentInDirectory = scandir($directory);
-// Remove ".." and ".".
-$contentInDirectory = array_values(array_diff($contentInDirectory, ['..', '.']));
+// Read all the files in the configured directory.
+$allFiles = readAllFilesInDirectory($config['directory']);
 
-foreach($contentInDirectory as $fileOrDirectory) {
-  $key = is_dir($fileOrDirectory) ? "directories" : "files";
-  array_push($filesAndDirectories[$key], $fileOrDirectory);
-}
+// Prepare response which includes a `requestUrl` and the `files` which can be request from that base `requestUrl`.
+$response = array('requestUrl' => $requestUrl, 'files' => $allFiles);
 
-echo json_encode($filesAndDirectories);
+// Send the response.
+echo json_encode($response);
