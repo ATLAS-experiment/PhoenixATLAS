@@ -7,9 +7,9 @@ import {
   StateManager,
 } from 'phoenix-event-display';
 import { EventDisplayService } from 'phoenix-ui-components';
-import { environment } from '../../environments/environment';
-import eventConfig from '../../event-config.json';
-import phoenixMenuConfig from '../../assets/files/config/atlas-config.json';
+import { environment } from '../../../environments/environment';
+import eventConfig from '../../../event-config.json';
+import phoenixMenuConfig from '../../../assets/files/config/atlas-config.json';
 
 @Component({
   selector: 'atlas-experiment',
@@ -22,7 +22,7 @@ export class ATLASComponent implements OnInit {
 
   constructor(private eventDisplay: EventDisplayService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     let defaultEvent: { eventFile: string; eventType: string };
     if (environment?.singleEvent) {
       defaultEvent = eventConfig;
