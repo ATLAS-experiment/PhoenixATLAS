@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { PhoenixUIModule } from 'phoenix-ui-components';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,12 +12,19 @@ import { EventDataExplorerComponent } from './components/event-data-explorer/eve
 import { EventDataExplorerDialogComponent } from './components/event-data-explorer/event-data-explorer-dialog/event-data-explorer-dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, ATLASComponent, EventDataExplorerComponent, EventDataExplorerDialogComponent],
+  declarations: [
+    AppComponent,
+    ATLASComponent,
+    EventDataExplorerComponent,
+    EventDataExplorerDialogComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     PhoenixUIModule,
     AppRoutingModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   bootstrap: [AppComponent],
 })
