@@ -1,0 +1,16 @@
+<div class="dialog">
+  <h1 mat-dialog-title>Event data from directory</h1>
+  <div mat-dialog-content class="dialog-content d-flex flex-column">
+    <button
+      class="btn file-path-button"
+      title="Load event"
+      *ngFor="let file of dataDirectoryFiles"
+      (click)="loadEvent(file)"
+    >
+      {{ file }}
+    </button>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onClose()" cdkFocusInitial>Close</button>
+  </div>
+</div>

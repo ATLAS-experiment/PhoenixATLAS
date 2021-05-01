@@ -232,6 +232,13 @@
   dependencies:
     tslib "^2.0.0"
 
+"@angular/material@^11.2.11":
+  version "11.2.11"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-11.2.11.tgz#29515cc5f0324fd34b97cb539e59679b67a9f7d8"
+  integrity sha512-B9uehF/TCaH6+nCY3+S8GxSHzFbk1OD4djzyBcSNsLnwtY3UYSCT9j/J05cAahpCSUPxCWkj4MfgnhtduLmMgA==
+  dependencies:
+    tslib "^2.0.0"
+
 "@angular/material@^11.2.7":
   version "11.2.10"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-11.2.10.tgz#2ad9761b784646dc15c8d912238e53cb89582a4e"

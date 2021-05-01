@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ATLASComponent } from './atlas/atlas.component';
+import { ATLASComponent } from './pages/atlas/atlas.component';
 
 const routes: Routes = [
   {
