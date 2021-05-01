@@ -4,18 +4,25 @@ error_reporting(E_ERROR | E_PARSE);
 
 // Associative array / dictionary for configuration.
 $config = array(
-  "directory" => './data'
+  'directory' => './data/'
 );
 
+// If the `f` query param is set then read the file specified through the param.
+if (isset($_GET['f'])) {
+  echo file_get_contents($config['directory'] . $_GET['f']);
+  return;
+}
+
 // Read all files in the given directory. The directory is relative to this PHP script.
-function readAllFilesInDirectory($dir) {
+function readAllFilesInDirectory($dir)
+{
   $dirIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
-  $filesArray = array(); 
-  
+  $filesArray = array();
+
   foreach ($dirIterator as $path) {
-      if (!$path->isDir()){ 
-        $filesArray[] = $path->getPathname(); 
-      }
+    if (!$path->isDir()) {
+      $filesArray[] = str_replace('\\', '/', $path->getPathname());
+    }
   }
 
   return $filesArray;
@@ -27,14 +34,16 @@ if (!is_dir($config['directory'])) {
   return;
 }
 
-// Base URL for making the request to get a file.
-$requestUrl = dirname($_SERVER['PHP_SELF']) . '/';
-
 // Read all the files in the configured directory.
 $allFiles = readAllFilesInDirectory($config['directory']);
 
-// Prepare response which includes a `requestUrl` and the `files` which can be request from that base `requestUrl`.
-$response = array('requestUrl' => $requestUrl, 'files' => $allFiles);
+// Prepare the response and remove `./data` at the start of files paths.
+$response = array_map(
+  function ($file) use ($config) {
+    return substr($file, strlen($config['directory']));
+  },
+  $allFiles
+);
 
 // Send the response.
 echo json_encode($response);
