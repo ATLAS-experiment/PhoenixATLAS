@@ -1,0 +1,20 @@
+.file-path-button {
+  width: 100%;
+  color: var(--phoenix-text-color);
+  background: var(--phoenix-background-color-tertiary);
+  text-align: left;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    background: var(--phoenix-background-color-secondary);
+  }
+
+  &:focus {
+    border: 1px solid var(--phoenix-text-color-secondary);
+  }
+}
