@@ -5,6 +5,7 @@
   text-align: left;
   border-radius: 1rem;
   margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -16,5 +17,6 @@
 
   &:focus {
     border: 1px solid var(--phoenix-text-color-secondary);
+    box-shadow: none;
   }
 }
