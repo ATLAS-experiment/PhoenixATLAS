@@ -19,6 +19,7 @@ import phoenixMenuConfig from '../../../assets/files/config/atlas-config.json';
 export class ATLASComponent implements OnInit {
   phoenixMenuRoot = new PhoenixMenuNode('Phoenix Menu', 'phoenix-menu');
   loaded = false;
+  loadingProgress = 0;
 
   constructor(private eventDisplay: EventDisplayService) {}
 
@@ -259,6 +260,9 @@ export class ATLASComponent implements OnInit {
       1000,
       false
     );
+    this.eventDisplay
+      .getLoadingManager()
+      .addProgressListener((progress) => (this.loadingProgress = progress));
 
     this.eventDisplay.getLoadingManager().addLoadListenerWithCheck(() => {
       this.loaded = true;
