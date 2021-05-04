@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "copy-api": "cp -R ./api ./docs/api",
-    "deploy": "ng build --prod --output-path ./docs --base-href \"./\" && cp ./docs/index.html ./docs/404.html && yarn copy-api",
+    "deploy": "ng build --prod --output-path ./docs --base-href \"./\" && cp ./docs/index.html ./docs/404.html",
     "deploy:single": "ng build --configuration singleEvent --prod --output-path ./docs --base-href \"./\" && cp ./docs/index.html ./docs/404.html"
   },
   "private": true,
