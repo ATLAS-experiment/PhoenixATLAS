@@ -4,7 +4,7 @@ import { JiveXMLLoader } from 'phoenix-event-display';
 import { EventDisplayService } from 'phoenix-ui-components';
 
 // Local API URL for debugging.
-// const localAPI = 'http://localhost/phoenix/php/read-files.php';
+// const serverAPI = 'http://localhost/phoenix/php/read-files.php';
 const serverAPI = 'api/read-files.php';
 
 @Component({
@@ -15,6 +15,8 @@ const serverAPI = 'api/read-files.php';
 export class EventDataExplorerDialogComponent {
   private apiPath = serverAPI;
   dataDirectoryFiles: string[];
+  loading = true;
+  error = false;
 
   constructor(
     private eventDisplay: EventDisplayService,
@@ -24,10 +26,18 @@ export class EventDataExplorerDialogComponent {
       .then((res) => res.json())
       .then((res: string[]) => {
         this.dataDirectoryFiles = res;
+        this.error = false;
+      })
+      .catch(() => {
+        this.error = true;
+      })
+      .finally(() => {
+        this.loading = false;
       });
   }
 
   loadEvent(file: string) {
+    this.loading = true;
     fetch(`${this.apiPath}?f=${file}`)
       .then((res) => res.text())
       .then((eventData) => {
@@ -39,6 +49,14 @@ export class EventDataExplorerDialogComponent {
             this.loadJSONEvent(eventData);
             break;
         }
+
+        this.error = false;
+      })
+      .catch(() => {
+        this.error = true;
+      })
+      .finally(() => {
+        this.loading = false;
       });
   }
 

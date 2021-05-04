@@ -260,6 +260,7 @@ export class ATLASComponent implements OnInit {
       1000,
       false
     );
+
     this.eventDisplay
       .getLoadingManager()
       .addProgressListener((progress) => (this.loadingProgress = progress));

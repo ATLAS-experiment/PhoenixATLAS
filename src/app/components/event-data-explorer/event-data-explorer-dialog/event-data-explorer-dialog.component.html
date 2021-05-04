@@ -1,6 +1,10 @@
 <div class="dialog">
-  <h1 mat-dialog-title>Event data from directory</h1>
+  <div class="d-flex">
+    <h1 mat-dialog-title>Event data from directory</h1>
+    <atlas-ring-loader *ngIf="loading"></atlas-ring-loader>
+  </div>
   <div mat-dialog-content class="dialog-content d-flex flex-column">
+    <div *ngIf="error">Error processing request.</div>
     <button
       class="btn file-path-button"
       title="Load event"

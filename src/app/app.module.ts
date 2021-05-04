@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { ATLASComponent } from './pages/atlas/atlas.component';
 import { EventDataExplorerComponent } from './components/event-data-explorer/event-data-explorer.component';
 import { EventDataExplorerDialogComponent } from './components/event-data-explorer/event-data-explorer-dialog/event-data-explorer-dialog.component';
+import { RingLoaderComponent } from './components/ring-loader/ring-loader.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { EventDataExplorerDialogComponent } from './components/event-data-explor
     ATLASComponent,
     EventDataExplorerComponent,
     EventDataExplorerDialogComponent,
+    RingLoaderComponent,
   ],
   imports: [
     BrowserModule,
