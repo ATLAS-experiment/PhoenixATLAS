@@ -7,6 +7,8 @@ import { EventDisplayService } from 'phoenix-ui-components';
 // const serverAPI = 'http://localhost/phoenix/php/read-files.php';
 const serverAPI = 'api/read-files.php';
 
+const supportFileTypes = ['json', 'xml'];
+
 @Component({
   selector: 'atlas-event-data-explorer-dialog',
   templateUrl: './event-data-explorer-dialog.component.html',
@@ -25,7 +27,10 @@ export class EventDataExplorerDialogComponent {
     fetch(this.apiPath)
       .then((res) => res.json())
       .then((res: string[]) => {
-        this.dataDirectoryFiles = res;
+        this.dataDirectoryFiles = res.filter((file) =>
+          supportFileTypes.includes(file.split('.').pop())
+        );
+
         this.error = false;
       })
       .catch(() => {

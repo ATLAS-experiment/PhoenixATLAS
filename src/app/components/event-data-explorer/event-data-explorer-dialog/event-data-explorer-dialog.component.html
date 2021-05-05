@@ -3,16 +3,30 @@
     <h1 mat-dialog-title>Event data from directory</h1>
     <atlas-ring-loader *ngIf="loading"></atlas-ring-loader>
   </div>
-  <div mat-dialog-content class="dialog-content d-flex flex-column">
+  <div mat-dialog-content class="dialog-content">
     <div *ngIf="error">Error processing request.</div>
-    <button
-      class="btn file-path-button"
-      title="Load event"
-      *ngFor="let file of dataDirectoryFiles"
-      (click)="loadEvent(file)"
+    <mat-tab-group
+      mat-align-tabs="start"
+      animationDuration="0ms"
+      disableRipple
+      color="transparent"
     >
-      {{ file }}
-    </button>
+      <mat-tab label="Event data">
+        <div class="py-3">
+          <button
+            class="btn file-path-button"
+            title="Load event"
+            *ngFor="let file of dataDirectoryFiles"
+            (click)="loadEvent(file)"
+          >
+            {{ file }}
+          </button>
+        </div>
+      </mat-tab>
+      <mat-tab label="Config">
+        <div class="py-3"></div>
+      </mat-tab>
+    </mat-tab-group>
   </div>
   <div mat-dialog-actions>
     <button mat-button (click)="onClose()" cdkFocusInitial>Close</button>
