@@ -4,7 +4,7 @@ import { JiveXMLLoader } from 'phoenix-event-display';
 import { EventDisplayService } from 'phoenix-ui-components';
 
 // Local API URL for debugging.
-// const serverAPI = 'http://localhost/phoenix/php/read-files.php';
+// const serverAPI = 'http://localhost/phoenix/api/read-files.php';
 const serverAPI = 'api/read-files.php';
 
 const supportFileTypes = ['json', 'xml'];
@@ -16,7 +16,8 @@ const supportFileTypes = ['json', 'xml'];
 })
 export class EventDataExplorerDialogComponent {
   private apiPath = serverAPI;
-  dataDirectoryFiles: string[];
+  eventDataFiles: string[];
+  configFiles: string[];
   loading = true;
   error = false;
 
@@ -24,45 +25,30 @@ export class EventDataExplorerDialogComponent {
     private eventDisplay: EventDisplayService,
     private dialogRef: MatDialogRef<EventDataExplorerDialogComponent>
   ) {
-    fetch(this.apiPath)
-      .then((res) => res.json())
-      .then((res: string[]) => {
-        this.dataDirectoryFiles = res.filter((file) =>
-          supportFileTypes.includes(file.split('.').pop())
-        );
+    // Event data
+    this.makeRequest(this.apiPath, 'json', (res: string[]) => {
+      this.eventDataFiles = res.filter((file) =>
+        supportFileTypes.includes(file.split('.').pop())
+      );
+    });
 
-        this.error = false;
-      })
-      .catch(() => {
-        this.error = true;
-      })
-      .finally(() => {
-        this.loading = false;
-      });
+    // Config
+    this.makeRequest(`${this.apiPath}?type=config`, 'json', (res: string[]) => {
+      this.configFiles = res.filter((file) => file.split('.').pop() === 'json');
+    });
   }
 
   loadEvent(file: string) {
-    this.loading = true;
-    fetch(`${this.apiPath}?f=${file}`)
-      .then((res) => res.text())
-      .then((eventData) => {
-        switch (file.split('.').pop()) {
-          case 'xml':
-            this.loadJiveXMLEvent(eventData);
-            break;
-          case 'json':
-            this.loadJSONEvent(eventData);
-            break;
-        }
-
-        this.error = false;
-      })
-      .catch(() => {
-        this.error = true;
-      })
-      .finally(() => {
-        this.loading = false;
-      });
+    this.makeRequest(`${this.apiPath}?f=${file}`, 'text', (eventData) => {
+      switch (file.split('.').pop()) {
+        case 'xml':
+          this.loadJiveXMLEvent(eventData);
+          break;
+        case 'json':
+          this.loadJSONEvent(eventData);
+          break;
+      }
+    });
   }
 
   private loadJSONEvent(eventData: string) {
@@ -78,7 +64,42 @@ export class EventDataExplorerDialogComponent {
     this.onClose();
   }
 
+  loadConfig(file: string) {
+    this.makeRequest(
+      `${this.apiPath}?type=config&f=${file}`,
+      'text',
+      (config) => {
+        const stateManager = this.eventDisplay.getStateManager();
+        stateManager.loadStateFromJSON(JSON.parse(config));
+
+        this.onClose();
+      }
+    );
+  }
+
+  // Helpers
+
   onClose() {
     this.dialogRef.close();
+  }
+
+  makeRequest(
+    urlPath: string,
+    responseType: 'json' | 'text',
+    onData: (data: any) => void
+  ) {
+    this.loading = true;
+    fetch(urlPath)
+      .then((res) => res[responseType]())
+      .then((data) => {
+        onData(data);
+        this.error = false;
+      })
+      .catch(() => {
+        this.error = true;
+      })
+      .finally(() => {
+        this.loading = false;
+      });
   }
 }
