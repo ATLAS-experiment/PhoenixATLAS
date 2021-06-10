@@ -138,21 +138,12 @@
   dependencies:
     tslib "^2.1.0"
 
-"@angular/cdk@^11.2.11":
-  version "11.2.13"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-11.2.13.tgz#d54c9187e3b8cf3f8ba190b1edddc08ed2b740de"
-  integrity sha512-FkE4iCwoLbQxLDUOjV1I7M/6hmpyb7erAjEdWgch7nGRNxF1hqX5Bqf1lvLFKPNCbx5NRI5K7YVAdIUQUR8vug==
+"@angular/cdk@^12.0.3", "@angular/cdk@^12.0.4":
+  version "12.0.4"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-12.0.4.tgz#074f17dc3f3f2ed054dace5ea2d6c89126e000df"
+  integrity sha512-NX/1kEc6ndyEHjGcMtMJYEjwmoURuwRSqKJLbGcHTUwXuuR+hfDP/vU1XDOeXNC80SV+0B4BpJnREkINILfYKw==
   dependencies:
-    tslib "^2.0.0"
-  optionalDependencies:
-    parse5 "^5.0.0"
-
-"@angular/cdk@^11.2.7":
-  version "11.2.10"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-11.2.10.tgz#0ebf2c44f97f4f123988e8f829756cf893e803a1"
-  integrity sha512-Cq1dTQDGcqfB2ks8q3q4HPf7kEXU3FCB/OC5XYGMhs8tUyFTabhmXAcfkiBA4YO8YPWRc8FKrJsE1q4nV8vPKQ==
-  dependencies:
-    tslib "^2.0.0"
+    tslib "^2.1.0"
   optionalDependencies:
     parse5 "^5.0.0"
 
@@ -230,19 +221,12 @@
   dependencies:
     tslib "^2.1.0"
 
-"@angular/material@^11.2.11":
-  version "11.2.11"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-11.2.11.tgz#29515cc5f0324fd34b97cb539e59679b67a9f7d8"
-  integrity sha512-B9uehF/TCaH6+nCY3+S8GxSHzFbk1OD4djzyBcSNsLnwtY3UYSCT9j/J05cAahpCSUPxCWkj4MfgnhtduLmMgA==
+"@angular/material@^12.0.3", "@angular/material@^12.0.4":
+  version "12.0.4"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-12.0.4.tgz#0cd88328f846d7ba6485abc7f1888aef174d7e4c"
+  integrity sha512-pvfYEeUCLR7EmA6R/kkXz5jfl+RHwh3AS9X9kWARWIOzA7p0hG9ApoFT5KCofTBNp0nukau1QoGR4WGla6wWvQ==
   dependencies:
-    tslib "^2.0.0"
-
-"@angular/material@^11.2.7":
-  version "11.2.10"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-11.2.10.tgz#2ad9761b784646dc15c8d912238e53cb89582a4e"
-  integrity sha512-itylLtTloyCrmtotccVzplso7DGoiFdN91ud2sopGacTpfKVkw4tO5nIWRGWDmuu3dvHCqGo3h6EoZN0l9G+Wg==
-  dependencies:
-    tslib "^2.0.0"
+    tslib "^2.1.0"
 
 "@angular/platform-browser-dynamic@~12.0.4":
   version "12.0.4"
@@ -1594,10 +1578,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.41.tgz#d0b939d94c1d7bd53d04824af45f1139b8c45615"
   integrity sha512-dueRKfaJL4RTtSa7bWeTK1M+VH+Gns73oCgzvYfHZywRCoPSd8EkXBL0mZ9unPTveBn+D9phZBaxuzpwjWkW0g==
 
-"@types/node@^15.0.1":
-  version "15.0.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.0.1.tgz#ef34dea0881028d11398be5bf4e856743e3dc35a"
-  integrity sha512-TMkXt0Ck1y0KKsGr9gJtWGjttxlZnnvDtphxUOSd0bfaR6Q1jle+sPvrzNR1urqYTWMinoKvjKfXUGsumaO1PA==
+"@types/node@^15.12.2":
+  version "15.12.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.12.2.tgz#1f2b42c4be7156ff4a6f914b2fb03d05fa84e38d"
+  integrity sha512-zjQ69G564OCIWIOHSXyQEEDpdpGl+G348RAKY0XXy9Z5kU9Vzv1GMNnkar/ZJ8dzXB3COzD9Mo9NtRZ4xfgUww==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -5649,27 +5633,27 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-phoenix-event-display@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-1.8.0.tgz#8cc99f29691d3b012d7584897135b10da10a4ec8"
-  integrity sha512-7tJYJfr1ta67YHe6QNEkgvWfJarbkrifTVE09sDKAbo7/tH6Ml+D0o8lfjP8f2G5S+4kZRM3QHcCPi6SgI5TOQ==
+phoenix-event-display@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-2.0.0.tgz#0c8631a5aa1c5d991f65eed4b46062a08fb8f199"
+  integrity sha512-CW6KrWZZQ1KtOxzUV5I8GwWDDOhmWyU2Cngqqch216rZTNpW6Yu3z7fiHkSfYX0fceSacxWbqm7Ra1hP2+c0Hg==
   dependencies:
     "@tweenjs/tween.js" "^17.4.0"
     dat.gui "^0.7.7"
     jszip "^3.6.0"
     stats-js "^1.0.1"
-    three "^0.127.0"
+    three "^0.128.0"
 
-phoenix-ui-components@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-1.8.0.tgz#d025b017021fb8563b2b53f809d36d21cd97ca46"
-  integrity sha512-Z49H4M5CDRqFMvGYqL+V9TEHq31zeWThOEV2xQSp0BugkO0kxxo7dGhMpKsKeOIOtKlSEUVQwR/38Lok4MFWlw==
+phoenix-ui-components@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-2.0.0.tgz#05fd71473c36e3b6817139a8f40b880a1ad6197c"
+  integrity sha512-ix8VLzCxAQ003gEDSvA1NiGt1MFlqhBTvlvus/bOgWaTu5orkdtVAlnw0vsPg6MC/wRVlAj/lR8mclwy6XVgig==
   dependencies:
     "@angular-slider/ngx-slider" "^2.0.3"
-    "@angular/cdk" "^11.2.7"
-    "@angular/material" "^11.2.7"
+    "@angular/cdk" "^12.0.3"
+    "@angular/material" "^12.0.3"
     css-element-queries "^1.2.3"
-    three "^0.127.0"
+    three "^0.128.0"
     tslib "^2.0.1"
 
 picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.3:
@@ -6313,10 +6297,10 @@ postcss@^8.2.10, postcss@^8.2.9:
     nanoid "^3.1.23"
     source-map-js "^0.6.2"
 
-prettier@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
-  integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
+prettier@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.1.tgz#76903c3f8c4449bc9ac597acefa24dc5ad4cbea6"
+  integrity sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==
 
 pretty-bytes@^5.3.0:
   version "5.6.0"
@@ -7413,10 +7397,10 @@ text-table@0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-three@^0.127.0:
-  version "0.127.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.127.0.tgz#c463f4d41b2c735dcf8e9e51a388815e80cd3791"
-  integrity sha512-wtgrn+mhYUbobxT7QN3GPdu3SRpSBQvwY6uOzLChWS7QE//f7paDU/+wlzbg+ngeIvBBqjBHSRuywTh8A99Jng==
+three@^0.128.0:
+  version "0.128.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.128.0.tgz#884dacca6a330e45600a09ec5439283f50b76aa6"
+  integrity sha512-i0ap/E+OaSfzw7bD1TtYnPo3VEplkl70WX5fZqZnfZsE3k3aSFudqrrC9ldFZfYFkn1zwDmBcdGfiIm/hnbyZA==
 
 through@^2.3.6:
   version "2.3.8"
