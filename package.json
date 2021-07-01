@@ -21,8 +21,8 @@
     "@angular/platform-browser": "~12.0.4",
     "@angular/platform-browser-dynamic": "~12.0.4",
     "@angular/router": "~12.0.4",
-    "phoenix-event-display": "^2.0.0",
-    "phoenix-ui-components": "^2.0.0",
+    "phoenix-event-display": "^2.1.0",
+    "phoenix-ui-components": "^2.1.0",
     "rxjs": "^6.5.3",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
