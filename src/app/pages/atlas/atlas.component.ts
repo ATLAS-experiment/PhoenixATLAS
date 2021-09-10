@@ -54,7 +54,38 @@ export class ATLASComponent implements OnInit {
     this.eventDisplay.init(configuration);
 
     // Load detector geometries
+    let geometryVersion = "run4Full";
+    switch (geometryVersion) { 
+      case "run2Simple":
+        this.simpleGeometry();
+        break;
+      case "run2Full":
+        this.run2FullGeometry();
+        break;
+      case "run3Full":
+        this.run3FullGeometry();
+        break;
+      case "run4Full":
+        this.run4FullGeometry();
+        break;
+      default:
+        console.log("Unknown geometry key ", geometryVersion)
+        break;
+    }
 
+    this.eventDisplay
+      .getLoadingManager()
+      .addProgressListener((progress) => (this.loadingProgress = progress));
+
+    this.eventDisplay.getLoadingManager().addLoadListenerWithCheck(() => {
+      this.loaded = true;
+      const stateManager = new StateManager();
+      stateManager.loadStateFromJSON(phoenixMenuConfig);
+      this.eventDisplay.animateClippingWithCollision(10000);
+    });
+  }
+
+  private fullMagnetGeometry() {
     // Magnets + Support
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/Barrel-Toroid.gltf',
@@ -84,6 +115,11 @@ export class ATLASComponent implements OnInit {
       1000,
       false
     );
+  }
+
+  private run2FullGeometry() {
+    
+    this.fullMagnetGeometry();
 
     // LAr
     this.eventDisplay.loadGLTFGeometry(
@@ -260,16 +296,36 @@ export class ATLASComponent implements OnInit {
       1000,
       false
     );
+  }
 
-    this.eventDisplay
-      .getLoadingManager()
-      .addProgressListener((progress) => (this.loadingProgress = progress));
+  private simpleGeometry() {
+    // Magnets + Support
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Barrel-Toroid.gltf',
+      'Barrel Toroid',
+      'Magnets',
+      1000,
+      false
+    );
+  }
 
-    this.eventDisplay.getLoadingManager().addLoadListenerWithCheck(() => {
-      this.loaded = true;
-      const stateManager = new StateManager();
-      stateManager.loadStateFromJSON(phoenixMenuConfig);
-      this.eventDisplay.animateClippingWithCollision(10000);
-    });
+  private run3FullGeometry() {
+    console.log("run3FullGeometry not yet implemented")
+  }
+
+  private run4FullGeometry() {
+    this.itkGeometry();
+    this.fullMagnetGeometry();
+
+  }
+
+  private itkGeometry() {
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/Beampipe.glb',
+      'Beampipe',
+      'Inner Detector',
+      1000,
+      false
+    );  
   }
 }
