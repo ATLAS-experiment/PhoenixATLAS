@@ -56,6 +56,9 @@ export class ATLASComponent implements OnInit {
 
     // Load detector geometries
     let geometryVersion = getUrlOptions().get('geom');
+    if (geometryVersion)
+      console.log('Trying to open geometry: ', geometryVersion);
+
     switch (geometryVersion) {
       case 'run2Simple':
         this.simpleGeometry();
@@ -69,7 +72,6 @@ export class ATLASComponent implements OnInit {
       case 'run4Full':
         this.run4FullGeometry();
         break;
-
       default:
         console.log(
           'Unknown geometry key: ',
@@ -124,9 +126,7 @@ export class ATLASComponent implements OnInit {
     );
   }
 
-  private run2FullGeometry() {
-    this.fullMagnetGeometry();
-
+  private fullCaloGeometry() {
     // LAr
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/Lar-Barrel.gltf',
@@ -172,52 +172,21 @@ export class ATLASComponent implements OnInit {
       1000,
       false
     );
+  }
+
+  private run2FullGeometry() {
+    // These aren't really changing
+    this.fullMagnetGeometry();
+    this.fullCaloGeometry();
 
     // Inner Detector
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/Beam.gltf',
-      'Beam',
-      'Inner Detector',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/Pixel.gltf',
-      'Pixel',
-      'Inner Detector',
-      1000,
-      true
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/SCT-BAR.gltf',
-      'SCT',
-      'Inner Detector',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/SCT-EC.gltf',
-      'SCT Endcaps',
-      'Inner Detector',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/TRT-BAR.gltf',
-      'TRT',
-      'Inner Detector',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/TRT-EC.gltf',
-      'TRT Endcaps',
-      'Inner Detector',
-      1000,
-      false
-    );
+    this.run2InnerDetector();
 
     // Muons
+    this.run2MuonSpectrometer();
+  }
+
+  private run2MuonSpectrometer() {
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/Extra-Wheel.gltf',
       'Extra wheel',
@@ -304,6 +273,51 @@ export class ATLASComponent implements OnInit {
     );
   }
 
+  private run2InnerDetector() {
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Beam.gltf',
+      'Beam',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Pixel.gltf',
+      'Pixel',
+      'Inner Detector',
+      1000,
+      true
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/SCT-BAR.gltf',
+      'SCT',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/SCT-EC.gltf',
+      'SCT Endcaps',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/TRT-BAR.gltf',
+      'TRT',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/TRT-EC.gltf',
+      'TRT Endcaps',
+      'Inner Detector',
+      1000,
+      false
+    );
+  }
+
   private simpleGeometry() {
     // Magnets + Support
     this.eventDisplay.loadGLTFGeometry(
@@ -322,6 +336,8 @@ export class ATLASComponent implements OnInit {
   private run4FullGeometry() {
     this.itkGeometry();
     this.fullMagnetGeometry();
+    this.fullCaloGeometry();
+    this.run2MuonSpectrometer(); // FIXME!
   }
 
   private itkGeometry() {
