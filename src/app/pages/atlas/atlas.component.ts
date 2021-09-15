@@ -8,6 +8,7 @@ import {
 } from 'phoenix-event-display';
 import { EventDisplayService } from 'phoenix-ui-components';
 import { environment } from '../../../environments/environment';
+import { getUrlOptions } from '../../functions/url-options';
 import eventConfig from '../../../event-config.json';
 import phoenixMenuConfig from '../../../assets/files/config/atlas-config.json';
 
@@ -54,22 +55,28 @@ export class ATLASComponent implements OnInit {
     this.eventDisplay.init(configuration);
 
     // Load detector geometries
-    let geometryVersion = "run4Full";
-    switch (geometryVersion) { 
-      case "run2Simple":
+    let geometryVersion = getUrlOptions().get('geom');
+    switch (geometryVersion) {
+      case 'run2Simple':
         this.simpleGeometry();
         break;
-      case "run2Full":
+      case 'run2Full':
         this.run2FullGeometry();
         break;
-      case "run3Full":
+      case 'run3Full':
         this.run3FullGeometry();
         break;
-      case "run4Full":
+      case 'run4Full':
         this.run4FullGeometry();
         break;
+
       default:
-        console.log("Unknown geometry key ", geometryVersion)
+        console.log(
+          'Unknown geometry key: ',
+          geometryVersion,
+          'Will default to run2Full.'
+        );
+        this.run2FullGeometry();
         break;
     }
 
@@ -118,7 +125,6 @@ export class ATLASComponent implements OnInit {
   }
 
   private run2FullGeometry() {
-    
     this.fullMagnetGeometry();
 
     // LAr
@@ -310,13 +316,12 @@ export class ATLASComponent implements OnInit {
   }
 
   private run3FullGeometry() {
-    console.log("run3FullGeometry not yet implemented")
+    console.log('run3FullGeometry not yet implemented');
   }
 
   private run4FullGeometry() {
     this.itkGeometry();
     this.fullMagnetGeometry();
-
   }
 
   private itkGeometry() {
@@ -326,76 +331,76 @@ export class ATLASComponent implements OnInit {
       'Inner Detector',
       1000,
       false
-    );  
+    );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/InnerPixels_barrel.glb',
       'Inner Pixels Barrel',
       'Inner Detector',
       1000,
       false
-    );  
+    );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/InnerPixels_NEC.glb',
       'Inner Pixels Negative Endcap',
       'Inner Detector',
       1000,
       false
-    );  
+    );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/InnerPixels_PEC.glb',
       'Inner Pixels Pos Endcap',
       'Inner Detector',
       1000,
       false
-    );  
+    );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/OuterPixels_barrel.glb',
       'Outer Pixels Barrel',
       'Inner Detector',
       1000,
       false
-    ); 
+    );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/OuterPixels_NEC.glb',
       'Outer Pixels Negative Endcap',
       'Inner Detector',
       1000,
       false
-    );  
+    );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/OuterPixels_PEC.glb',
       'Outer Pixels Pos Endcap',
       'Inner Detector',
       1000,
       false
-    );  
+    );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/Strips_barrel.glb',
       'Strips Barrel',
       'Inner Detector',
       1000,
       false
-    ); 
+    );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/Strips_NEC.glb',
       'Strips Negative Endcap',
       'Inner Detector',
       1000,
       false
-    );  
+    );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/Strips_PEC.glb',
       'Strips Pos Endcap',
       'Inner Detector',
       1000,
       false
-    ); 
+    );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/HGTD.glb',
       'HGTD',
       'HGTD',
       1000,
       false
-    ); 
+    );
   }
 }
