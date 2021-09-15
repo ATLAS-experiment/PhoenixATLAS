@@ -8,6 +8,7 @@ import {
 } from 'phoenix-event-display';
 import { EventDisplayService } from 'phoenix-ui-components';
 import { environment } from '../../../environments/environment';
+import { getUrlOptions } from '../../functions/url-options';
 import eventConfig from '../../../event-config.json';
 import phoenixMenuConfig from '../../../assets/files/config/atlas-config.json';
 
@@ -55,8 +56,10 @@ export class ATLASComponent implements OnInit {
 
     // Load detector geometries
 
+    const isGeometryP2 = getUrlOptions().get('geom') === 'p2';
+
     // Magnets + Support
-    this.eventDisplay.loadGLTFGeometry(
+    isGeometryP2 && this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/Barrel-Toroid.gltf',
       'Barrel Toroid',
       'Magnets',
