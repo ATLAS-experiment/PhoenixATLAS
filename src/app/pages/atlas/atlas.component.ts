@@ -55,11 +55,49 @@ export class ATLASComponent implements OnInit {
     this.eventDisplay.init(configuration);
 
     // Load detector geometries
+    let geometryVersion = getUrlOptions().get('geom');
+    if (geometryVersion)
+      console.log('Trying to open geometry: ', geometryVersion);
 
-    const isGeometryP2 = getUrlOptions().get('geom') === 'p2';
+    switch (geometryVersion) {
+      case 'run2Simple':
+      case 'simple':
+          this.simpleGeometry();
+        break;
+      case 'run2Full':
+        this.run2FullGeometry();
+        break;
+      case 'run3Full':
+        this.run3FullGeometry();
+        break;
+      case 'run4Full':
+        this.run4FullGeometry();
+        break;
+      default:
+        console.log(
+          'Unknown geometry key: ',
+          geometryVersion,
+          'Will default to run2Full.'
+        );
+        this.run2FullGeometry();
+        break;
+    }
 
+    this.eventDisplay
+      .getLoadingManager()
+      .addProgressListener((progress) => (this.loadingProgress = progress));
+
+    this.eventDisplay.getLoadingManager().addLoadListenerWithCheck(() => {
+      this.loaded = true;
+      const stateManager = new StateManager();
+      stateManager.loadStateFromJSON(phoenixMenuConfig);
+      this.eventDisplay.animateClippingWithCollision(10000);
+    });
+  }
+
+  private fullMagnetGeometry() {
     // Magnets + Support
-    isGeometryP2 && this.eventDisplay.loadGLTFGeometry(
+    this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/Barrel-Toroid.gltf',
       'Barrel Toroid',
       'Magnets',
@@ -87,7 +125,9 @@ export class ATLASComponent implements OnInit {
       1000,
       false
     );
+  }
 
+  private fullCaloGeometry() {
     // LAr
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/Lar-Barrel.gltf',
@@ -133,52 +173,21 @@ export class ATLASComponent implements OnInit {
       1000,
       false
     );
+  }
+
+  private run2FullGeometry() {
+    // These aren't really changing
+    this.fullMagnetGeometry();
+    this.fullCaloGeometry();
 
     // Inner Detector
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/Beam.gltf',
-      'Beam',
-      'Inner Detector',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/Pixel.gltf',
-      'Pixel',
-      'Inner Detector',
-      1000,
-      true
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/SCT-BAR.gltf',
-      'SCT',
-      'Inner Detector',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/SCT-EC.gltf',
-      'SCT Endcaps',
-      'Inner Detector',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/TRT-BAR.gltf',
-      'TRT',
-      'Inner Detector',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/TRT-EC.gltf',
-      'TRT Endcaps',
-      'Inner Detector',
-      1000,
-      false
-    );
+    this.run2InnerDetector();
 
     // Muons
+    this.run2MuonSpectrometer();
+  }
+
+  private run2MuonSpectrometer() {
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/Extra-Wheel.gltf',
       'Extra wheel',
@@ -263,16 +272,168 @@ export class ATLASComponent implements OnInit {
       1000,
       false
     );
+  }
 
-    this.eventDisplay
-      .getLoadingManager()
-      .addProgressListener((progress) => (this.loadingProgress = progress));
+  private run2InnerDetector() {
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Beam.gltf',
+      'Beam',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Pixel.gltf',
+      'Pixel',
+      'Inner Detector',
+      1000,
+      true
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/SCT-BAR.gltf',
+      'SCT',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/SCT-EC.gltf',
+      'SCT Endcaps',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/TRT-BAR.gltf',
+      'TRT',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/TRT-EC.gltf',
+      'TRT Endcaps',
+      'Inner Detector',
+      1000,
+      false
+    );
+  }
 
-    this.eventDisplay.getLoadingManager().addLoadListenerWithCheck(() => {
-      this.loaded = true;
-      const stateManager = new StateManager();
-      stateManager.loadStateFromJSON(phoenixMenuConfig);
-      this.eventDisplay.animateClippingWithCollision(10000);
-    });
+  private simpleGeometry() {
+    // Magnets + Support
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Toroids_Simple.glb',
+      'Barrel Toroid',
+      '',
+      1000,
+      false
+    );
+
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/LArBarrel_Simple.glb',
+      'LAr Barrel',
+      '',
+      1000,
+      false
+    );
+
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/InnerDetector_Simple.glb',
+      'Inner Detector',
+      '',
+      1000,
+      false
+    );
+  }
+
+  private run3FullGeometry() {
+    console.log('run3FullGeometry not yet implemented');
+  }
+
+  private run4FullGeometry() {
+    this.itkGeometry();
+    this.fullMagnetGeometry();
+    this.fullCaloGeometry();
+    this.run2MuonSpectrometer(); // FIXME!
+  }
+
+  private itkGeometry() {
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/Beampipe.glb',
+      'Beampipe',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/InnerPixels_barrel.glb',
+      'Inner Pixels Barrel',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/InnerPixels_NEC.glb',
+      'Inner Pixels Negative Endcap',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/InnerPixels_PEC.glb',
+      'Inner Pixels Pos Endcap',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/OuterPixels_barrel.glb',
+      'Outer Pixels Barrel',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/OuterPixels_NEC.glb',
+      'Outer Pixels Negative Endcap',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/OuterPixels_PEC.glb',
+      'Outer Pixels Pos Endcap',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/Strips_barrel.glb',
+      'Strips Barrel',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/Strips_NEC.glb',
+      'Strips Negative Endcap',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/Strips_PEC.glb',
+      'Strips Pos Endcap',
+      'Inner Detector',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/run4/HGTD.glb',
+      'HGTD',
+      'HGTD',
+      1000,
+      false
+    );
   }
 }
