@@ -62,7 +62,7 @@ export class ATLASComponent implements OnInit {
     switch (geometryVersion) {
       case 'run2Simple':
       case 'simple':
-          this.simpleGeometry();
+        this.simpleGeometry();
         break;
       case 'run2Full':
         this.run2FullGeometry();
@@ -324,7 +324,7 @@ export class ATLASComponent implements OnInit {
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/Toroids_Simple.glb',
       'Barrel Toroid',
-      '',
+      undefined,
       1000,
       false
     );
@@ -332,17 +332,17 @@ export class ATLASComponent implements OnInit {
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/LArBarrel_Simple.glb',
       'LAr Barrel',
-      '',
+      undefined,
       1000,
-      false
+      true
     );
 
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/InnerDetector_Simple.glb',
       'Inner Detector',
-      '',
+      undefined,
       1000,
-      false
+      true
     );
   }
 
