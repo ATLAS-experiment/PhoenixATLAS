@@ -148,16 +148,7 @@
   dependencies:
     tslib "^2.2.0"
 
-"@angular/cdk@^12.1.3":
-  version "12.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-12.2.1.tgz#546d8d5f2266c962037516241cb81abc81d0d211"
-  integrity sha512-UOzuDXcfaJlBd+o7EJb6CZ3my1AmU7XHriC/hFT6bFianhVK/I/0gcOwxyMx8VAplEip8msLczX0IlZSJ1GCCg==
-  dependencies:
-    tslib "^2.2.0"
-  optionalDependencies:
-    parse5 "^5.0.0"
-
-"@angular/cdk@^12.2.5":
+"@angular/cdk@^12.2.3", "@angular/cdk@^12.2.5":
   version "12.2.6"
   resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-12.2.6.tgz#12aca217e30d96625b38ab83c0ca445f074ba41b"
   integrity sha512-93H08rrsxJfY3ZvHINkFmCR4C0R0vFog4+uZ6PuW1YAZGClGVfivzjvMRN5hwqbANLV5xWzgsipMc2x0gIzcpg==
@@ -239,14 +230,7 @@
   dependencies:
     tslib "^2.2.0"
 
-"@angular/material@^12.1.3":
-  version "12.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-12.2.1.tgz#0dbffdc1a6684ce6761c40705688a3857f76207f"
-  integrity sha512-EvukOx8KQp1jhe3YpV3dfydBUm3BG9p/0lOB+hQA5V7kfZjT1ovqv08ASQ4vJ5o8FGDrmepGWHHe5+XxLqnFwA==
-  dependencies:
-    tslib "^2.2.0"
-
-"@angular/material@^12.2.5":
+"@angular/material@^12.2.3", "@angular/material@^12.2.5":
   version "12.2.6"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-12.2.6.tgz#d9fd7a546919c4416d9cd9d720e32aa211d05ba8"
   integrity sha512-B31eyFrV+71spNnTzKtCiIZE0Kcw4a22jQqqOQzy7jEvlHcW6sq15raxUGemW+rGQ+mMeb2V+ZVf2+L7MycOyg==
@@ -4732,10 +4716,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-jszip@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/jszip/-/jszip-3.6.0.tgz#839b72812e3f97819cc13ac4134ffced95dd6af9"
-  integrity sha512-jgnQoG9LKnWO3mnVNBnfhkh0QknICd1FGSrXcgrl67zioyJ4wgx25o9ZqwNtrROSflGBCGYnJfjrIyRIby1OoQ==
+jszip@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/jszip/-/jszip-3.7.1.tgz#bd63401221c15625a1228c556ca8a68da6fda3d9"
+  integrity sha512-ghL0tz1XG9ZEmRMcEN2vt7xabrDdqHHeykgARpmZ0BiIctWxM47Vt63ZO2dnp4QYt/xJVLLy5Zv1l/xRdh2byg==
   dependencies:
     lie "~3.3.0"
     pako "~1.0.2"
@@ -5856,28 +5840,28 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-phoenix-event-display@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-2.2.0.tgz#cbe0d326d80d9fa5076c4daad162cb092b94c655"
-  integrity sha512-PUkWyr2kTjj/NFCubulxTmN4YovxbZDS3DZsBF6yoFSGkZ53wGL5pLP9x9T5kbnhmaWJ2BXZ1UOkR3KRiLryMQ==
+phoenix-event-display@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-2.3.0.tgz#f0bb6a249d732ee78f824da2882f02662142f5f3"
+  integrity sha512-CC2q6lDrz0hjOhNglLmtcq7rTB/Hgk456yTo8iiwM8kLlHh0Cs+ghf8Bwxme0LqUj/ZYFR24Pw4Rv6QCO2cC2A==
   dependencies:
     "@tweenjs/tween.js" "^17.4.0"
     dat.gui "^0.7.7"
-    jszip "^3.6.0"
+    jszip "^3.7.1"
     stats-js "^1.0.1"
-    three "^0.130.1"
+    three "^0.132.2"
 
-phoenix-ui-components@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-2.2.0.tgz#128665706fbb8c5eb6b9c3c8707a7cecb34fef07"
-  integrity sha512-yCPr3vtwremrpeuMAoXhml8wFe0AkRUkRWX2/H7FsQEy1W2QdVCWjcB/+l2tLviRE0wOWOfCYd+if/QTsPZvZg==
+phoenix-ui-components@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-2.3.0.tgz#ccee4e891b55671bcd8cc81dd7a175d09f8e5af7"
+  integrity sha512-zEifjcKGgOrGWBSiv9CnJ8FY4l/1ZVfox0VRYO1DRijDVmLdQoDECR/Wovpoic8e70aMmuiUt/ynoPwoZa1Ocw==
   dependencies:
     "@angular-slider/ngx-slider" "^2.0.3"
-    "@angular/cdk" "^12.1.3"
-    "@angular/material" "^12.1.3"
+    "@angular/cdk" "^12.2.3"
+    "@angular/material" "^12.2.3"
     css-element-queries "^1.2.3"
-    three "^0.130.1"
-    tslib "^2.0.1"
+    three "^0.132.2"
+    tslib "^2.3.1"
 
 picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.3:
   version "2.2.3"
@@ -7629,10 +7613,10 @@ text-table@0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-three@^0.130.1:
-  version "0.130.1"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.130.1.tgz#797588b2877ace31603bbbc864eb2e3022f0b3b4"
-  integrity sha512-OSPPKcGvFSiGkG3jFrwwC76PBV/ZSrGxpBbg28bW8s9GU8r/y2spNGtEXHEb/CVqo0Ctf5Lx2rVaxQZB6OasaA==
+three@^0.132.2:
+  version "0.132.2"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.132.2.tgz#95eb1856147237c03e887cbbe56f964b6fb40b5e"
+  integrity sha512-0wcR7LxxkXMn6Gi58gEs3QvY8WpTVXA31L2VOvpjm4ZPYFRHCZC13UqynheFoS5OXDYgtBneN0dhbaNBE8iLhQ==
 
 through@^2.3.6:
   version "2.3.8"
@@ -7721,7 +7705,7 @@ tslib@^1.10.0, tslib@^1.9.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.0, tslib@^2.0.1, tslib@^2.2.0:
+tslib@^2.0.0, tslib@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
