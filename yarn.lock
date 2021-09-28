@@ -5840,10 +5840,10 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-phoenix-event-display@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-2.3.0.tgz#f0bb6a249d732ee78f824da2882f02662142f5f3"
-  integrity sha512-CC2q6lDrz0hjOhNglLmtcq7rTB/Hgk456yTo8iiwM8kLlHh0Cs+ghf8Bwxme0LqUj/ZYFR24Pw4Rv6QCO2cC2A==
+phoenix-event-display@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-2.3.2.tgz#b48ad9cf74ce734096e23e1cd93b650b865b30ff"
+  integrity sha512-tycGiINCOSIj/Yu77NvHecDf0U7JZqguJzjgnZ65txk08inVzvnjbM8KIYjLbU0Wr0YKagyxgorhHEd0h+XwBg==
   dependencies:
     "@tweenjs/tween.js" "^17.4.0"
     dat.gui "^0.7.7"
@@ -7745,15 +7745,10 @@ type-is@~1.6.17, type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
-typescript@4.3.5:
+typescript@4.3.5, typescript@~4.3.5:
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.5.tgz#4d1c37cc16e893973c45a06886b7113234f119f4"
   integrity sha512-DqQgihaQ9cUrskJo9kIyW/+g0Vxsk8cDtZ52a3NGh0YNTfpUSArXSohyUGnvbPazEPLu398C0UxmKSOrPumUzA==
-
-typescript@~4.2.4:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
-  integrity sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
