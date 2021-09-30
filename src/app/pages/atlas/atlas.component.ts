@@ -62,14 +62,17 @@ export class ATLASComponent implements OnInit {
     switch (geometryVersion) {
       case 'run2Simple':
       case 'simple':
-          this.simpleGeometry();
+        this.simpleGeometry();
         break;
+      case 'run2':
       case 'run2Full':
         this.run2FullGeometry();
         break;
+      case 'run3':
       case 'run3Full':
         this.run3FullGeometry();
         break;
+      case 'run4':
       case 'run4Full':
         this.run4FullGeometry();
         break;
@@ -79,7 +82,7 @@ export class ATLASComponent implements OnInit {
           geometryVersion,
           'Will default to run2Full.'
         );
-        this.run2FullGeometry();
+        this.run3FullGeometry();
         break;
     }
 
@@ -102,7 +105,7 @@ export class ATLASComponent implements OnInit {
       'Barrel Toroid',
       'Magnets',
       1000,
-      false
+      true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/End-Cap-Toroid.gltf',
@@ -123,7 +126,7 @@ export class ATLASComponent implements OnInit {
       'Warm structure',
       'Magnets',
       1000,
-      false
+      true
     );
   }
 
@@ -176,67 +179,17 @@ export class ATLASComponent implements OnInit {
   }
 
   private run2FullGeometry() {
-    // These aren't really changing
-    this.fullMagnetGeometry();
+    this.run3InnerDetector(); // Same as run-2
     this.fullCaloGeometry();
-
-    // Inner Detector
-    this.run2InnerDetector();
-
-    // Muons
-    this.run2MuonSpectrometer();
+    this.run3MuonSpectrometer();
+    this.fullMagnetGeometry();
+    // We do not have the run-2 Muon geometry. :-(
   }
 
-  private run2MuonSpectrometer() {
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/Extra-Wheel.gltf',
-      'Extra wheel',
-      'Muon Spectrometer > Endcaps',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/Big-Wheel.gltf',
-      'Big wheel',
-      'Muon Spectrometer > Endcaps',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/Outer-Wheel.gltf',
-      'Outer Wheel',
-      'Muon Spectrometer > Endcaps',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/Muon-Barrel-Inner.gltf',
-      'Muon Barrel Inner',
-      'Muon Spectrometer > Barrel',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/Muon-Barrel-Middle.gltf',
-      'Muon Barrel Middle',
-      'Muon Spectrometer > Barrel',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/Muon-Barrel-Outer.gltf',
-      'Muon Barrel Outer',
-      'Muon Spectrometer > Barrel',
-      1000,
-      false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/Muon-Big-Wheel-MDT.gltf',
-      'Big Wheel MDT ',
-      'Muon Spectrometer > Endcaps',
-      1000,
-      false
-    );
+  private run3MuonSpectrometer() {
+    this.muonSpectrometerBigWheel();
+    this.muonSpectrometerBarrel();
+
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/Small-Wheel-Chambers.gltf',
       'Small Wheel',
@@ -274,7 +227,62 @@ export class ATLASComponent implements OnInit {
     );
   }
 
-  private run2InnerDetector() {
+  private muonSpectrometerBarrel() {
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Muon-Barrel-Inner.gltf',
+      'Muon Barrel Inner',
+      'Muon Spectrometer > Barrel',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Muon-Barrel-Middle.gltf',
+      'Muon Barrel Middle',
+      'Muon Spectrometer > Barrel',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Muon-Barrel-Outer.gltf',
+      'Muon Barrel Outer',
+      'Muon Spectrometer > Barrel',
+      1000,
+      false
+    );
+  }
+
+  private muonSpectrometerBigWheel() {
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Extra-Wheel.gltf',
+      'Extra wheel',
+      'Muon Spectrometer > Endcaps',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Big-Wheel.gltf',
+      'Big wheel',
+      'Muon Spectrometer > Endcaps',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Outer-Wheel.gltf',
+      'Outer Wheel',
+      'Muon Spectrometer > Endcaps',
+      1000,
+      false
+    );
+    this.eventDisplay.loadGLTFGeometry(
+      'assets/geometry/Muon-Big-Wheel-MDT.gltf',
+      'Big Wheel MDT ',
+      'Muon Spectrometer > Endcaps',
+      1000,
+      false
+    );
+  }
+
+  private run3InnerDetector() {
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/Beam.gltf',
       'Beam',
@@ -294,14 +302,14 @@ export class ATLASComponent implements OnInit {
       'SCT',
       'Inner Detector',
       1000,
-      false
+      true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/SCT-EC.gltf',
       'SCT Endcaps',
       'Inner Detector',
       1000,
-      false
+      true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/TRT-BAR.gltf',
@@ -324,7 +332,7 @@ export class ATLASComponent implements OnInit {
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/Toroids_Simple.glb',
       'Barrel Toroid',
-      '',
+      undefined,
       1000,
       false
     );
@@ -332,29 +340,33 @@ export class ATLASComponent implements OnInit {
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/LArBarrel_Simple.glb',
       'LAr Barrel',
-      '',
+      undefined,
       1000,
-      false
+      true
     );
 
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/InnerDetector_Simple.glb',
       'Inner Detector',
-      '',
+      undefined,
       1000,
-      false
+      true
     );
   }
 
   private run3FullGeometry() {
-    console.log('run3FullGeometry not yet implemented');
+    // These aren't really changing
+    this.fullMagnetGeometry();
+    this.fullCaloGeometry();
+    this.run3InnerDetector();
+    this.run3MuonSpectrometer();
   }
 
   private run4FullGeometry() {
     this.itkGeometry();
     this.fullMagnetGeometry();
     this.fullCaloGeometry();
-    this.run2MuonSpectrometer(); // FIXME!
+    this.run3MuonSpectrometer();
   }
 
   private itkGeometry() {
@@ -370,42 +382,42 @@ export class ATLASComponent implements OnInit {
       'Inner Pixels Barrel',
       'Inner Detector',
       1000,
-      false
+      true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/InnerPixels_NEC.glb',
       'Inner Pixels Negative Endcap',
       'Inner Detector',
       1000,
-      false
+      true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/InnerPixels_PEC.glb',
       'Inner Pixels Pos Endcap',
       'Inner Detector',
       1000,
-      false
+      true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/OuterPixels_barrel.glb',
       'Outer Pixels Barrel',
       'Inner Detector',
       1000,
-      false
+      true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/OuterPixels_NEC.glb',
       'Outer Pixels Negative Endcap',
       'Inner Detector',
       1000,
-      false
+      true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/OuterPixels_PEC.glb',
       'Outer Pixels Pos Endcap',
       'Inner Detector',
       1000,
-      false
+      true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/Strips_barrel.glb',
