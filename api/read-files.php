@@ -2,15 +2,12 @@
 
 include_once('./helpers.php');
 
-// Do not report errors (comment for development).
-error_reporting(E_ERROR | E_PARSE);
-
+$httpProtocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
 // Associative array / dictionary for configuration.
 $config = array(
   'event_data' => '../data/event_data/',
   'config' => '../data/config/'
 );
-
 // Set the configured directory to read for either event data or config.
 $directoryToRead = 'event_data';
 
@@ -25,9 +22,9 @@ if (isset($_GET['f'])) {
   return;
 }
 
-// Return a 422 response code if the configured directory is not found.
+// Throw a 503 response code if the configured directory is not found.
 if (!is_dir($config[$directoryToRead])) {
-  http_response_code(422);
+  http_response_code(503);
   echo "The configured directory does not exist.";
   return;
 }
@@ -37,8 +34,10 @@ $allFiles = readAllFilesInDirectory($config[$directoryToRead]);
 
 // Prepare the response and remove `./data` at the start of files paths.
 $response = array_map(
-  function ($file) use ($config, $directoryToRead) {
-    return substr($file, strlen($config[$directoryToRead]));
+  function ($file) use ($httpProtocol, $config, $directoryToRead) {
+    $filePath = substr(getcwd(), strlen($_SERVER['DOCUMENT_ROOT'])) . '/' . $file;
+
+    return $httpProtocol . '://' . $_SERVER['HTTP_HOST'] . '/' . str_replace('\\', '/', $filePath);
   },
   $allFiles
 );
