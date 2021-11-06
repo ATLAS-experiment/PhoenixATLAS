@@ -35,9 +35,13 @@ $allFiles = readAllFilesInDirectory($config[$directoryToRead]);
 // Prepare the response and remove `./data` at the start of files paths.
 $response = array_map(
   function ($file) use ($httpProtocol, $config, $directoryToRead) {
+    $fileName = substr($file, strlen($config[$directoryToRead]));
     $filePath = substr(getcwd(), strlen($_SERVER['DOCUMENT_ROOT'])) . '/' . $file;
 
-    return $httpProtocol . '://' . $_SERVER['HTTP_HOST'] . '/' . str_replace('\\', '/', $filePath);
+    return array(
+      'name' => str_replace('\\', '/', $fileName),
+      'url' => $httpProtocol . '://' . $_SERVER['HTTP_HOST'] . str_replace('\\', '/', $filePath)
+    );
   },
   $allFiles
 );
