@@ -22,9 +22,9 @@ if (isset($_GET['f'])) {
   return;
 }
 
-// Throw a 503 response code if the configured directory is not found.
+// Throw a 422 response code if the configured directory is not found.
 if (!is_dir($config[$directoryToRead])) {
-  http_response_code(503);
+  http_response_code(422);
   echo "The configured directory does not exist.";
   return;
 }
@@ -35,9 +35,13 @@ $allFiles = readAllFilesInDirectory($config[$directoryToRead]);
 // Prepare the response and remove `./data` at the start of files paths.
 $response = array_map(
   function ($file) use ($httpProtocol, $config, $directoryToRead) {
+    $fileName = substr($file, strlen($config[$directoryToRead]));
     $filePath = substr(getcwd(), strlen($_SERVER['DOCUMENT_ROOT'])) . '/' . $file;
 
-    return $httpProtocol . '://' . $_SERVER['HTTP_HOST'] . '/' . str_replace('\\', '/', $filePath);
+    return array(
+      'name' => str_replace('\\', '/', $fileName),
+      'url' => $httpProtocol . '://' . $_SERVER['HTTP_HOST'] . str_replace('\\', '/', $filePath)
+    );
   },
   $allFiles
 );

@@ -18,9 +18,9 @@
             class="btn file-path-button"
             title="Load event"
             *ngFor="let file of eventDataFiles"
-            (click)="loadEvent(file)"
+            (click)="loadEvent(file.url)"
           >
-            {{ file }}
+            {{ file.name }}
           </button>
         </div>
       </mat-tab>
@@ -30,9 +30,9 @@
             class="btn file-path-button"
             title="Load event"
             *ngFor="let file of configFiles"
-            (click)="loadConfig(file)"
+            (click)="loadConfig(file.url)"
           >
-            {{ file }}
+            {{ file.name }}
           </button>
         </div>
       </mat-tab>
