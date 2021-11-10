@@ -4,8 +4,8 @@ import { JiveXMLLoader } from 'phoenix-event-display';
 import { EventDisplayService } from 'phoenix-ui-components';
 
 // Local API URL for debugging.
-const serverAPI = 'http://localhost/phoenix/api/read-files.php';
-// const serverAPI = 'api/read-files.php';
+// const serverAPI = 'http://localhost/phoenix/api/read-files.php';
+const serverAPI = 'api/read-files.php';
 
 const supportFileTypes = ['json', 'xml'];
 
