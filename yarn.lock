@@ -150,12 +150,21 @@
   dependencies:
     tslib "^2.2.0"
 
-"@angular/cdk@^12.2.11", "@angular/cdk@^12.2.12":
+"@angular/cdk@^12.2.12":
   version "12.2.12"
   resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-12.2.12.tgz#61dda37d8900275790da623c1f83daa1e859c795"
   integrity sha512-AK+74JZP95BDj9OJ1YUaRqPXkgs+oadTk7z+8omu1RcvDoUivouKxgODCQX5jI7rZeQIlnV49hEgBne07hYk4A==
   dependencies:
     tslib "^2.2.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
+"@angular/cdk@^13.0.3":
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-13.1.1.tgz#bfc1050df357a26bda03410d821ae05826dcf88e"
+  integrity sha512-66PyWg+zKdxTe3b1pc1RduT8hsMs/hJ0aD0JX0pSEWVq7O0OJWJ5f0z+Mk03T9tAERA3NK1GifcKEDq5k7R2Zw==
+  dependencies:
+    tslib "^2.3.0"
   optionalDependencies:
     parse5 "^5.0.0"
 
@@ -232,12 +241,19 @@
   dependencies:
     tslib "^2.2.0"
 
-"@angular/material@^12.2.11", "@angular/material@^12.2.12":
+"@angular/material@^12.2.12":
   version "12.2.12"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-12.2.12.tgz#66add3fb649422128b3273c10b9b7cce2f77e0cf"
   integrity sha512-Fgpffplmd3KfoK9Ms34jYXRaqFYLbgXdGl250Acg7fV16LN1KTOyYm2Qs+FQuqyhuXfhePPt6Srh7VcGTLT4+g==
   dependencies:
     tslib "^2.2.0"
+
+"@angular/material@^13.0.3":
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-13.1.1.tgz#4d2d5a1ea6527b282beb26de6491eb3a221fab2a"
+  integrity sha512-kKWZBhnzuBYAVO1nrkqEaVTCJ2onEWs+tzAJDIlmbo9USiQyVCnFXx+rs86m4kRUxeAAZ9mcW5BGJr6oy5ClCA==
+  dependencies:
+    tslib "^2.3.0"
 
 "@angular/platform-browser-dynamic@^12.2.12":
   version "12.2.12"
@@ -2633,6 +2649,15 @@ cliui@^5.0.0:
     strip-ansi "^5.2.0"
     wrap-ansi "^5.1.0"
 
+cliui@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/cliui/-/cliui-6.0.0.tgz#511d702c0c4e41ca156d7d0e96021f23e13225b1"
+  integrity sha512-t6wbgtoCXvAzst7QgXxJYqPt0usEfbgQdftEPbLL/cvv6HPE5VgvqCuAIDR0NgU52ds6rFwqrgakNLrHEjCbrQ==
+  dependencies:
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    wrap-ansi "^6.2.0"
+
 cliui@^7.0.2:
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-7.0.4.tgz#a0265ee655476fc807aea9df3df8df7783808b4f"
@@ -3246,6 +3271,11 @@ detect-passive-events@^1.0.4:
   resolved "https://registry.yarnpkg.com/detect-passive-events/-/detect-passive-events-1.0.5.tgz#ce324db665123bef9e368b8059ff95d95217cc05"
   integrity sha512-foW7Q35wwOCxVzW0xLf5XeB5Fhe7oyRgvkBYdiP9IWgLMzjqUqTvsJv9ymuEWGjY6AoDXD3OC294+Z9iuOw0QA==
 
+dijkstrajs@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/dijkstrajs/-/dijkstrajs-1.0.2.tgz#2e48c0d3b825462afe75ab4ad5e829c8ece36257"
+  integrity sha512-QV6PMaHTCNmKSeP6QoXhVTw9snc9VD8MulTT0Bd99Pacp4SS1cjcrYPgBPmibqKVtMJJfqC6XvOXgPMEEPH/fg==
+
 dir-glob@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-3.0.1.tgz#56dbf73d992a4a93ba1584f4534063fd2e41717f"
@@ -3354,6 +3384,11 @@ emojis-list@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-3.0.0.tgz#5570662046ad29e2e916e71aae260abdff4f6a78"
   integrity sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
+
+encode-utf8@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/encode-utf8/-/encode-utf8-1.0.3.tgz#f30fdd31da07fb596f281beb2f6b027851994cda"
+  integrity sha512-ucAnuBEhUK4boH2HjVYG5Q2mQyPorvv0u/ocS+zhdw0S8AlHYY+GOFhP1Gio5z4icpP2ivFSvhtFjQi8+T9ppw==
 
 encodeurl@~1.0.2:
   version "1.0.2"
@@ -5972,27 +6007,28 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-phoenix-event-display@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-2.4.0.tgz#a40c56fd9b6a172529af7bf8e78f1d3eb18e1013"
-  integrity sha512-P5nxi7+yGb9kKrSAOq0dVDsO3S7+rBAg1tkGl/wDdhfhQnS2hR7yHsZaT07XRilFbfgnnPMhFI7z/aDEkRQ41A==
+phoenix-event-display@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-2.5.0.tgz#84c14c73d9db446e3ffb6e277e07d4ba0457a784"
+  integrity sha512-UuRP61wAtkG0WXPXXjUtZV13wC6g57jAch7VWku8KbDIoX/I+SSqSk1Yp6O9tDI0t/lTgGFVi/hL2azSCgb6QQ==
   dependencies:
     "@tweenjs/tween.js" "^17.4.0"
     dat.gui "^0.7.7"
     jszip "^3.7.1"
     stats-js "^1.0.1"
-    three "^0.133.1"
+    three "^0.135.0"
 
-phoenix-ui-components@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-2.4.0.tgz#560f21efd1d40b00ac0ebcaa6fabe472c76de4f0"
-  integrity sha512-aWOWspWSbhf9FHmJkPUHXs+h+frg8Oq23GWISyPjTQ97VwOBQkVr8zc/QjkS5o/LewmpjnNKu0Jt4fSzjcMMEA==
+phoenix-ui-components@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-2.5.0.tgz#59a6acb8313cfa47b1e7f983b5cf8ce774bf76a0"
+  integrity sha512-lexwEMag9SkUnRI8q1sedatWSB0vBibtlrxvVp3b1GaYBF/F909YgM6d3muqVReULA+fI7cEw08gK2xxto+CnQ==
   dependencies:
     "@angular-slider/ngx-slider" "^2.0.3"
-    "@angular/cdk" "^12.2.11"
-    "@angular/material" "^12.2.11"
+    "@angular/cdk" "^13.0.3"
+    "@angular/material" "^13.0.3"
     css-element-queries "^1.2.3"
-    three "^0.133.1"
+    qrcode "1.5.0"
+    three "^0.135.0"
     tslib "^2.3.1"
 
 picocolors@^1.0.0:
@@ -6051,6 +6087,11 @@ pkg-dir@^4.1.0:
   integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   dependencies:
     find-up "^4.0.0"
+
+pngjs@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-5.0.0.tgz#e79dd2b215767fd9c04561c01236df960bce7fbb"
+  integrity sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==
 
 portfinder@^1.0.26:
   version "1.0.28"
@@ -6727,6 +6768,16 @@ punycode@^2.1.0, punycode@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+
+qrcode@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/qrcode/-/qrcode-1.5.0.tgz#95abb8a91fdafd86f8190f2836abbfc500c72d1b"
+  integrity sha512-9MgRpgVc+/+47dFvQeD6U2s0Z92EsKzcHogtum4QB+UNd025WOJSHvn/hjk9xmzj7Stj95CyUAs31mrjxliEsQ==
+  dependencies:
+    dijkstrajs "^1.0.1"
+    encode-utf8 "^1.0.3"
+    pngjs "^5.0.0"
+    yargs "^15.3.1"
 
 qs@6.7.0:
   version "6.7.0"
@@ -7751,10 +7802,10 @@ text-table@0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-three@^0.133.1:
-  version "0.133.1"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.133.1.tgz#5606f4817d67a09d9212d4ccbd6826564774f8f4"
-  integrity sha512-WydohO8ll949B0FTD6MGz59Yv2Lwj8hvObg/0Heh2r42S6+tQC1WByfCNRdmG4D7+odfGod+n8JPV1I2xrboWw==
+three@^0.135.0:
+  version "0.135.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.135.0.tgz#cff4ec8edd3c51ce9bc7e88d13e8eafed4d0ddfc"
+  integrity sha512-kuEpuuxRzLv0MDsXai9huCxOSQPZ4vje6y0gn80SRmQvgz6/+rI0NAvCRAw56zYaWKMGMfqKWsxF9Qa2Z9xymQ==
 
 through@^2.3.6:
   version "2.3.8"
@@ -7848,7 +7899,7 @@ tslib@^2.0.0, tslib@^2.2.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
 
-tslib@^2.3.1:
+tslib@^2.3.0, tslib@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
@@ -8246,6 +8297,15 @@ wrap-ansi@^5.1.0:
     string-width "^3.0.0"
     strip-ansi "^5.0.0"
 
+wrap-ansi@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-6.2.0.tgz#e9393ba07102e6c91a3b221478f0257cd2856e53"
+  integrity sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
 wrap-ansi@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
@@ -8295,6 +8355,14 @@ yargs-parser@^13.1.2:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
+yargs-parser@^18.1.2:
+  version "18.1.3"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-18.1.3.tgz#be68c4975c6b2abf469236b0c870362fab09a7b0"
+  integrity sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==
+  dependencies:
+    camelcase "^5.0.0"
+    decamelize "^1.2.0"
+
 yargs-parser@^20.2.2:
   version "20.2.7"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.7.tgz#61df85c113edfb5a7a4e36eb8aa60ef423cbc90a"
@@ -8315,6 +8383,23 @@ yargs@^13.3.2:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^13.1.2"
+
+yargs@^15.3.1:
+  version "15.4.1"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
+  integrity sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
+  dependencies:
+    cliui "^6.0.0"
+    decamelize "^1.2.0"
+    find-up "^4.1.0"
+    get-caller-file "^2.0.1"
+    require-directory "^2.1.1"
+    require-main-filename "^2.0.0"
+    set-blocking "^2.0.0"
+    string-width "^4.2.0"
+    which-module "^2.0.0"
+    y18n "^4.0.0"
+    yargs-parser "^18.1.2"
 
 yargs@^17.0.0:
   version "17.1.0"
