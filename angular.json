@@ -51,7 +51,8 @@
             "styles": ["src/styles.scss"],
             "allowedCommonJsDependencies": [
               "css-element-queries",
-              "@tweenjs/tween.js"
+              "@tweenjs/tween.js",
+              "qrcode"
             ],
             "scripts": [],
             "vendorChunk": true,

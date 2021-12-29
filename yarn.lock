@@ -4471,10 +4471,10 @@ phoenix-event-display@^2.5.0:
     stats-js "^1.0.1"
     three "^0.135.0"
 
-phoenix-ui-components@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-2.5.0.tgz#59a6acb8313cfa47b1e7f983b5cf8ce774bf76a0"
-  integrity sha512-lexwEMag9SkUnRI8q1sedatWSB0vBibtlrxvVp3b1GaYBF/F909YgM6d3muqVReULA+fI7cEw08gK2xxto+CnQ==
+phoenix-ui-components@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-2.5.1.tgz#13718254c2c86bc06e897801861295ac4ef59c93"
+  integrity sha512-SMJ2YY4TkqLtyVvH5UVdtMr4XY0fZglivWRfWcEKLWGIazKnFluFeEA/oQaXe46kpsqYwzr9ReIegDbbHPNzXw==
   dependencies:
     "@angular-slider/ngx-slider" "^2.0.3"
     "@angular/cdk" "^13.0.3"
