@@ -18,6 +18,7 @@ import phoenixMenuConfig from '../../../assets/files/config/atlas-config.json';
   styleUrls: [],
 })
 export class ATLASComponent implements OnInit {
+  apiURL = "";
   phoenixMenuRoot = new PhoenixMenuNode('Phoenix Menu', 'phoenix-menu');
   loaded = false;
   loadingProgress = 0;
