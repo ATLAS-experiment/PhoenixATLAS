@@ -4,12 +4,12 @@ An ATLAS version of [Phoenix](https://github.com/hsf/phoenix). The live version 
 
 ## Setup
 
-To setup, you will need [Node.js](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/en/docs/install/).
+To setup, you will need [Node.js](https://nodejs.org/en/download/) and [yarn](https://yarnpkg.com/).
 
-To install yarn using npm package manager (which comes with Node.js).
+To install yarn using corepack:
 
 ```sh
-npm install --global yarn
+corepack enable
 ```
 
 Once you have Node.js and yarn set up you can run this command to install the dependencies:
@@ -30,6 +30,13 @@ This will start Phoenix ATLAS locally which you can access through the URL [http
 
 Remember that this is using a local app, and so if you want to update the base configuration then you will need to edit this (i.e. if you want to change the geometry, or the configuration).
 
+## Updating to the newest version of Phoenix
+This can be done with e.g.: 
+```sh
+yarn up phoenix-event-display
+yarn up phoenix-ui-components
+```
+
 ## Deployment
 
 You can deploy Phoenix with the command:
@@ -39,7 +46,9 @@ yarn deploy
 ```
 
 This will put a static production/build version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.\
-For example with the command: `rsync -avz docs/ lxplus.cern.ch:/eos/project/h/hsf-phoenix/www/atlas`
+For example with the command: `rsync -avz docs/ phoenix@lxplus.cern.ch:/eos/atlas/atlascerngroupdisk/proj-phoenixatlas/www/atlas`
+
+If you has permissions issues with not being able to access the 
 
 ## Useful guides
 
