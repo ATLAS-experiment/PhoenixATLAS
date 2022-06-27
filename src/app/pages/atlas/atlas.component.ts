@@ -48,7 +48,7 @@ export class ATLASComponent implements OnInit {
       // Set the phoenix menu to be used (defined above)
       phoenixMenuRoot: this.phoenixMenuRoot,
       // Default event data to fallback to if none given in URL
-      // Do not set if there should be no event loaded by default
+      // Do not set if there should be no event loaded by defaultF
       defaultEventFile: defaultEvent,
     };
 
