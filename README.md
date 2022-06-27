@@ -33,8 +33,7 @@ Remember that this is using a local app, and so if you want to update the base c
 ## Updating to the newest version of Phoenix
 This can be done with e.g.: 
 ```sh
-yarn up phoenix-event-display
-yarn up phoenix-ui-components
+yarn upgrade phoenix-event-display@latest phoenix-ui-components@latest
 ```
 
 ## Deployment
@@ -47,6 +46,9 @@ yarn deploy
 
 This will put a static production/build version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.\
 For example with the command: `rsync -avz docs/ phoenix@lxplus.cern.ch:/eos/atlas/atlascerngroupdisk/proj-phoenixatlas/www/atlas`
+
+Or for dev:
+`rsync -avz docs/ phoenix@lxplus.cern.ch:/eos/atlas/atlascerngroupdisk/proj-phoenixatlas/www/atlas-dev`
 
 ## Useful guides
 
