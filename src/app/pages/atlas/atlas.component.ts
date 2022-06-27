@@ -18,7 +18,7 @@ import phoenixMenuConfig from '../../../assets/files/config/atlas-config.json';
   styleUrls: [],
 })
 export class ATLASComponent implements OnInit {
-  apiURL = "api/read-files.php";
+  apiURL = "../api/read-files.php";
   phoenixMenuRoot = new PhoenixMenuNode('Phoenix Menu', 'phoenix-menu');
   loaded = false;
   loadingProgress = 0;
@@ -40,9 +40,9 @@ export class ATLASComponent implements OnInit {
     const configuration: Configuration = {
       eventDataLoader: new PhoenixLoader(),
       presetViews: [
-        new PresetView('Left View', [0, 0, -12000], 'left-cube'),
-        new PresetView('Center View', [-500, 12000, 0], 'top-cube'),
-        new PresetView('Right View', [0, 0, 12000], 'right-cube'),
+        new PresetView('Left View', [0, 0, -12000], [0, 0, 0], 'left-cube'),
+        new PresetView('Center View', [-500, 12000, 0], [0, 0, 0], 'top-cube'),
+        new PresetView('Right View', [0, 0, 12000], [0, 0, 0], 'right-cube'),
       ],
       defaultView: [4000, 0, 4000],
       // Set the phoenix menu to be used (defined above)
