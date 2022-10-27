@@ -81,7 +81,7 @@ export class ATLASComponent implements OnInit {
         console.log(
           'Unknown geometry key: ',
           geometryVersion,
-          'Will default to run2Full.'
+          'Will default to run3Full.'
         );
         this.run3FullGeometry();
         break;
