@@ -59,6 +59,9 @@ export class ATLASComponent implements OnInit {
     let geometryVersion = getUrlOptions().get('geom');
     if (geometryVersion)
       console.log('Trying to open geometry: ', geometryVersion);
+    else
+      console.log('Defaulting to run4 geometry');
+      geometryVersion='run4Full'
 
     switch (geometryVersion) {
       case 'run2Simple':
@@ -83,7 +86,6 @@ export class ATLASComponent implements OnInit {
           geometryVersion,
           'Will default to run2Full.'
         );
-        this.run3FullGeometry();
         break;
     }
 
@@ -383,77 +385,77 @@ export class ATLASComponent implements OnInit {
       'assets/geometry/run4/Beampipe.glb',
       'Beampipe',
       'Inner Detector',
-      1,
+      1000,
       false
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/InnerPixels_barrel.glb',
       'Inner Pixels Barrel',
       'Inner Detector',
-      1,
+      1000,
       true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/InnerPixels_NEC.glb',
       'Inner Pixels Negative Endcap',
       'Inner Detector',
-      1,
+      1000,
       true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/InnerPixels_PEC.glb',
       'Inner Pixels Pos Endcap',
       'Inner Detector',
-      1,
+      1000,
       true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/OuterPixels_barrel.glb',
       'Outer Pixels Barrel',
       'Inner Detector',
-      1,
+      1000,
       true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/OuterPixels_NEC.glb',
       'Outer Pixels Negative Endcap',
       'Inner Detector',
-      1,
+      1000,
       true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/OuterPixels_PEC.glb',
       'Outer Pixels Pos Endcap',
       'Inner Detector',
-      1,
+      1000,
       true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/Strips_barrel.glb',
       'Strips Barrel',
       'Inner Detector',
-      1,
+      1000,
       true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/Strips_NEC.glb',
       'Strips Negative Endcap',
       'Inner Detector',
-      1,
+      1000,
       true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/Strips_PEC.glb',
       'Strips Pos Endcap',
       'Inner Detector',
-      1,
+      1000,
       true
     );
     this.eventDisplay.loadGLTFGeometry(
       'assets/geometry/run4/HGTD.glb',
       'HGTD',
       'HGTD',
-      1,
+      1000,
       true
     );
   }
