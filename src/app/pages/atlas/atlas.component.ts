@@ -10,7 +10,8 @@ import { EventDisplayService } from 'phoenix-ui-components';
 import { environment } from '../../../environments/environment';
 import { getUrlOptions } from '../../functions/url-options';
 import eventConfig from '../../../event-config.json';
-import phoenixMenuConfig from '../../../assets/files/config/atlas-config.json';
+import phoenixMenuConfigR3 from '../../../assets/files/config/atlas-config.json';
+import phoenixMenuConfigR4 from '../../../assets/files/config/run4.json';
 
 @Component({
   selector: 'atlas-experiment',
@@ -18,7 +19,7 @@ import phoenixMenuConfig from '../../../assets/files/config/atlas-config.json';
   styleUrls: [],
 })
 export class ATLASComponent implements OnInit {
-  apiURL = "../api/read-files.php";
+  apiURL = '../api/read-files.php';
   phoenixMenuRoot = new PhoenixMenuNode('Phoenix Menu', 'phoenix-menu');
   loaded = false;
   loadingProgress = 0;
@@ -57,12 +58,14 @@ export class ATLASComponent implements OnInit {
 
     // Load detector geometries
     let geometryVersion = getUrlOptions().get('geom');
-    if (geometryVersion)
+    if (geometryVersion) {
       console.log('Trying to open geometry: ', geometryVersion);
-    else
+    } else {
       console.log('Defaulting to run4 geometry');
-      geometryVersion='run4Full'
+      geometryVersion = 'run4Full';
+    }
 
+    let defaultConfig = phoenixMenuConfigR3;
     switch (geometryVersion) {
       case 'run2Simple':
       case 'simple':
@@ -79,12 +82,13 @@ export class ATLASComponent implements OnInit {
       case 'run4':
       case 'run4Full':
         this.run4FullGeometry();
+        defaultConfig = phoenixMenuConfigR4;
         break;
       default:
         console.log(
           'Unknown geometry key: ',
           geometryVersion,
-          'Will default to run2Full.'
+          'No geometry shown!'
         );
         break;
     }
@@ -103,7 +107,7 @@ export class ATLASComponent implements OnInit {
 
       if (!urlConfig) {
         const stateManager = new StateManager();
-        stateManager.loadStateFromJSON(phoenixMenuConfig);
+        stateManager.loadStateFromJSON(defaultConfig);
         this.eventDisplay.animateClippingWithCollision(10000);
       }
     });
@@ -382,81 +386,11 @@ export class ATLASComponent implements OnInit {
 
   private itkGeometry() {
     this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/run4/Beampipe.glb',
-      'Beampipe',
-      'Inner Detector',
+      'assets/geometry/run4/ITK.glb',
+      undefined,
+      'ITK',
       1000,
       false
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/run4/InnerPixels_barrel.glb',
-      'Inner Pixels Barrel',
-      'Inner Detector',
-      1000,
-      true
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/run4/InnerPixels_NEC.glb',
-      'Inner Pixels Negative Endcap',
-      'Inner Detector',
-      1000,
-      true
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/run4/InnerPixels_PEC.glb',
-      'Inner Pixels Pos Endcap',
-      'Inner Detector',
-      1000,
-      true
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/run4/OuterPixels_barrel.glb',
-      'Outer Pixels Barrel',
-      'Inner Detector',
-      1000,
-      true
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/run4/OuterPixels_NEC.glb',
-      'Outer Pixels Negative Endcap',
-      'Inner Detector',
-      1000,
-      true
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/run4/OuterPixels_PEC.glb',
-      'Outer Pixels Pos Endcap',
-      'Inner Detector',
-      1000,
-      true
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/run4/Strips_barrel.glb',
-      'Strips Barrel',
-      'Inner Detector',
-      1000,
-      true
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/run4/Strips_NEC.glb',
-      'Strips Negative Endcap',
-      'Inner Detector',
-      1000,
-      true
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/run4/Strips_PEC.glb',
-      'Strips Pos Endcap',
-      'Inner Detector',
-      1000,
-      true
-    );
-    this.eventDisplay.loadGLTFGeometry(
-      'assets/geometry/run4/HGTD.glb',
-      'HGTD',
-      'HGTD',
-      1000,
-      true
     );
   }
 }
