@@ -10,7 +10,7 @@ import { EventDisplayService } from 'phoenix-ui-components';
 import { environment } from '../../../environments/environment';
 import { getUrlOptions } from '../../functions/url-options';
 import eventConfig from '../../../event-config.json';
-import phoenixMenuConfigR3 from '../../../assets/files/config/atlas-config.json';
+import phoenixMenuConfigR3 from '../../../assets/files/config/run336567_evt2327102923.json';
 import phoenixMenuConfigR4 from '../../../assets/files/config/run4.json';
 
 @Component({
@@ -61,8 +61,8 @@ export class ATLASComponent implements OnInit {
     if (geometryVersion) {
       console.log('Trying to open geometry: ', geometryVersion);
     } else {
-      console.log('Defaulting to run4 geometry');
-      geometryVersion = 'run4Full';
+      console.log('Defaulting to run3 geometry');
+      geometryVersion = 'run3Full';
     }
 
     let defaultConfig = phoenixMenuConfigR3;
