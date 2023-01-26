@@ -3,7 +3,7 @@
   "version": 1,
   "cli": {
     "packageManager": "yarn",
-    "analytics": false
+    "analytics": "b5903cf8-b24d-4afd-88bf-b45d9cbcb53f"
   },
   "newProjectRoot": "projects",
   "projects": {
