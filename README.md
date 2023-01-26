@@ -16,6 +16,8 @@ Once you have Node.js and yarn set up you can run this command to install the de
 
 ```sh
 yarn install
+# For macOS Ventura you may need to specify C++ version, e.g. yarn install -std=c++17
+
 ```
 
 To run in development mode:
