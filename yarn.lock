@@ -6223,10 +6223,10 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-phoenix-event-display@^2.13.0:
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-2.13.0.tgz#4e1ef71dd68d224d9cb32133c36dcebdc94a8432"
-  integrity sha512-+QCkuCkFJCzmA/cld7TGsSBBpZFW+hMx6qeQUBBjIbyWywaofmZ4i82BrphxyErjyFg3V9oCT3MTYc8FGRV6mQ==
+phoenix-event-display@^2.14.0:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/phoenix-event-display/-/phoenix-event-display-2.14.0.tgz#6f53e0c4f21ad43ea0224e2c076d193c435eeda8"
+  integrity sha512-a+zP1sCO4ppOKDMfpARGsfGZ8sSgCNgPoGtHjj/rZ4M+GiDMbgUVJKp1G1L4Qa8zpIC1l8gJmXvkERDTN05IlQ==
   dependencies:
     "@babel/core" "^7.20.12"
     "@tweenjs/tween.js" "^18.6.4"
@@ -6237,10 +6237,10 @@ phoenix-event-display@^2.13.0:
     stats-js "^1.0.1"
     three "^0.149.0"
 
-phoenix-ui-components@^2.13.0:
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-2.13.0.tgz#9bf379100f9c167186b8abc171548f3bd9b1cc19"
-  integrity sha512-rxoYw+IwkUD1Jwib3GZEBcMZzISnXwVbKU92vcL7uuEitqNsRN8YAS8oiFIzNIUEDiNaSpPukX0T6HPNvYuC3A==
+phoenix-ui-components@^2.14.0:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-2.14.0.tgz#7daaf61b18f1476abbaff1723efb42086a3a427e"
+  integrity sha512-MDDnbI+dKl/GaE+5IyjFsWEe5Q8N13ud7z+PaXWZzf7R96dvWFkVFr39T9zx5mgXa+fNd8nXNKL6b5vnKnSI9A==
   dependencies:
     "@angular/animations" "^15.1.2"
     "@angular/cdk" "^15.1.2"

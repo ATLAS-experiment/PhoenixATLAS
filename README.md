@@ -2,6 +2,15 @@
 
 An ATLAS version of [Phoenix](https://github.com/hsf/phoenix). The live version is [here](https://phoenixatlas.web.cern.ch/PhoenixATLAS/)
 
+## Tips for users
+Most of the user interface is identical to phoenix, and so the [phoenix user guide](https://github.com/HSF/phoenix/blob/master/guides/users.md) should be the first place to start.
+
+There are a few special additions to PhoenixATLAS however, notably in terms of special url parameters you can pass such as:
+* `theme` - can be used to force the theme to either dark or light
+* `geom` - can be used to specify the geometry version. Options are 'simple', 'run2', 'run3', 'run4'  
+
+And there are still the 'usual' Phoenix options such as 'file', 'config' and 'embed'.
+
 ## Setup
 
 To setup, you will need [Node.js](https://nodejs.org/en/download/) and [yarn](https://yarnpkg.com/).

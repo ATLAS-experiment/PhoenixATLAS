@@ -37,6 +37,9 @@ export class ATLASComponent implements OnInit {
       };
     }
 
+    const urlOptions = getUrlOptions();
+
+
     // Define the configuration
     const configuration: Configuration = {
       eventDataLoader: new PhoenixLoader(),
@@ -53,11 +56,22 @@ export class ATLASComponent implements OnInit {
       defaultEventFile: defaultEvent,
     };
 
+    const theme = urlOptions.get('theme');
+    if (theme){
+      const choices = ['dark', 'light'];
+      if (choices.includes(theme.toLocaleLowerCase())) {
+        configuration.forceColourTheme=theme; 
+      } else {
+        console.log('Unknown theme ', theme)
+      }
+    }
+
+
     // Initialize the event display
     this.eventDisplay.init(configuration);
 
     // Load detector geometries
-    let geometryVersion = getUrlOptions().get('geom');
+    let geometryVersion = urlOptions.get('geom');
     if (geometryVersion) {
       console.log('Trying to open geometry: ', geometryVersion);
     } else {
@@ -100,10 +114,7 @@ export class ATLASComponent implements OnInit {
     this.eventDisplay.getLoadingManager().addLoadListenerWithCheck(() => {
       this.loaded = true;
 
-      const urlConfig = this.eventDisplay
-        .getURLOptionsManager()
-        .getURLOptions()
-        .get('config');
+      const urlConfig = urlOptions.get('config');
 
       if (!urlConfig) {
         const stateManager = new StateManager();
