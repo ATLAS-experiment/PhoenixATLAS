@@ -10,7 +10,7 @@ import { EventDisplayService } from 'phoenix-ui-components';
 import { environment } from '../../../environments/environment';
 import { getUrlOptions } from '../../functions/url-options';
 import eventConfig from '../../../event-config.json';
-import phoenixMenuConfigR3 from '../../../assets/files/config/run336567_evt2327102923.json';
+import phoenixMenuConfigR3 from '../../../assets/files/config/phoenix-config.json';
 import phoenixMenuConfigR4 from '../../../assets/files/config/run4.json';
 
 @Component({
