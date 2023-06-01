@@ -2,15 +2,19 @@
 
 An ATLAS version of the [Phoenix](https://github.com/hsf/phoenix) cross-experiment event display. The live version of PhoenixATLAS is [here](https://phoenixatlas.web.cern.ch/PhoenixATLAS/).
 
-## Tips for users
-Most of the user interface is identical to phoenix, and so the [phoenix user guide](https://github.com/HSF/phoenix/blob/master/guides/users.md) should be the first place to start.
 
+## Tips for users
+
+Most of the user interface is identical to phoenix, and so the [phoenix user guide](https://github.com/HSF/phoenix/blob/master/guides/users.md) should be the first place to start.
 The following explains how to use PhoenixATLAS in a poster, or blog article:
 * [Include in a web blog or article](./guides/phoenix-iframe.md)
 
 Additionally, for PhoenixATLAS we have some example events which can be reached through the `Event Browser` popup, selectable on the far right of the bottom menu (highlighted in red below):
 
 <img width="1280" alt="Screenshot 2023-06-01 at 13 15 47" src="https://github.com/ATLAS-experiment/PhoenixATLAS/assets/6764617/ec5cacf4-92b8-4ea7-9199-cabbb0e1601f">
+
+
+And you can use of course use [PhoenixATLAS](https://phoenixatlas.web.cern.ch/PhoenixATLAS/) to open your own files using the `File upload` dialog (third from right in the screenshot above). PhoenixATLAS supports `json` ( written out by the [DumpEventDataToJSON](https://gitlab.cern.ch/atlas/athena/-/tree/master/Event/DumpEventDataToJSON) algorithm), or [JiveXML](https://twiki.cern.ch/twiki/bin/view/AtlasComputing/JiveXML), as used by [Atlantis](https://twiki.cern.ch/twiki/bin/view/AtlasComputing/Atlantis).
 
 ## Tips for developers
 ### Setup
