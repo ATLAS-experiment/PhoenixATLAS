@@ -10,7 +10,7 @@ This can be done by using the `Create sharable link` option and filling in the c
 
 <img width="551" alt="Screenshot 2023-06-01 at 09 07 32" src="https://github.com/ATLAS-experiment/PhoenixATLAS/assets/6764617/34ef3232-f337-4bed-adb8-fb1789cbdcdb">
 
-Scrolling down in the above windows you will see a matching QR code for use embedding in a poster etc. For the example above, you can scan the following QR on your phone or tablet and it will open the event.
+Scrolling down in the above windows you will see a matching QR code for use embedding in a poster etc. For the example above, you can scan the following QR on your phone or tablet and it will open the event. If you have a device which supports AR, you can even display the event 'in the real world' (unfortunately Safari on iOS does not allow this at the time of writing. See [here](https://github.com/HSF/phoenix/blob/main/guides/users.md#arvr-mode) for details).
 
 <img width="205" alt="Screenshot 2023-06-01 at 09 08 56" src="https://github.com/ATLAS-experiment/PhoenixATLAS/assets/6764617/bb5709be-53b8-4542-a72b-a747d754ad2a">
 
