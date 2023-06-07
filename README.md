@@ -1,7 +1,10 @@
 # Phoenix ATLAS
 
-An ATLAS version of the [Phoenix](https://github.com/hsf/phoenix) cross-experiment event display. The live version of PhoenixATLAS is [here](https://phoenixatlas.web.cern.ch/PhoenixATLAS/).
+An ATLAS version of the [Phoenix](https://github.com/hsf/phoenix) cross-experiment event display. The live version of PhoenixATLAS is [here](https://phoenixatlas.web.cern.ch/PhoenixATLAS/), which can be used to browse example events, or upload your own (JiveXML and JSON are supported).
 
+PhoenixATLAS has also been used as an embedded event display in some Physics Briefings e.g. [New high-precision measurements of W and Z boson properties](https://atlas.cern/Updates/Briefing/WZ-properties-milestone) and [Not a jet all the way: is dark matter hiding in plain sight?](https://atlas.cern/Updates/Briefing/Semi-Visible-Jets). Have a look at the [documentation](./guides/phoenix-iframe.md) if you would like to do the same, or to make a QR code for use in e.g. a poster.
+
+PhoenixATLAS is also used to display recent collisions on the [ATLAS Live Event Browser](https://atlas-live.cern.ch/browser?triggerStream=physics_Main) - you need to click on an event, and then click on "Open this Event in Phoenix live".
 
 ## Tips for users
 
