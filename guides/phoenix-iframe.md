@@ -1,5 +1,7 @@
 # Include in a web blog or article
 
+**N.B.** *Please see the full [Phoenix guide](https://github.com/HSF/phoenix/blob/main/guides/users.md#the-phoenix-menu) for details on how to configure Phoenix.*
+
 Phoenix can be included inline in an article or blog using `<iframe>`. For instance, several ATLAS Physics briefings have included Phoenix event displays e.g. https://atlas.cern/Updates/Briefing/Semi-Visible-Jets.
 
 This can be done by using the `Create sharable link` option and filling in the correct paths in the UI
