@@ -44,6 +44,11 @@ This can be done with e.g.:
 ```sh
 yarn upgrade phoenix-event-display@latest phoenix-ui-components@latest
 ```
+or use:
+```
+yarn upgrade-interactive
+```
+to upgrade many dependencies at the same time (see the yarn [https://classic.yarnpkg.com/lang/en/docs/cli/upgrade-interactive/](documentation) for more details on this command).
 
 ## Deployment
 
@@ -56,8 +61,12 @@ yarn deploy
 This will put a static production/build version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.\
 For example with the command: `rsync -avz docs/ phoenix@lxplus.cern.ch:/eos/atlas/atlascerngroupdisk/proj-phoenixatlas/www/atlas`
 
+This is accessible at https://phoenixatlas.web.cern.ch/PhoenixATLAS
+
 Or for dev:
 `rsync -avz docs/ phoenix@lxplus.cern.ch:/eos/atlas/atlascerngroupdisk/proj-phoenixatlas/www/atlas-dev`
+
+which is accessible at https://phoenixatlastest.web.cern.ch
 
 ## Useful guides
 
