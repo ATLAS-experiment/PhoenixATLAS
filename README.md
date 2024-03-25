@@ -64,12 +64,12 @@ yarn deploy
 ```
 
 This will put a static production/build version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.\
-For example with the command: `rsync -avz docs/ phoenix@lxplus.cern.ch:/eos/atlas/atlascerngroupdisk/proj-phoenixatlas/www/atlas`
+For example with the command: `rsync -avz docs/ lxplus.cern.ch:/eos/atlas/atlascerngroupdisk/proj-phoenixatlas/www/atlas`
 
 This is accessible at https://phoenixatlas.web.cern.ch/PhoenixATLAS
 
 Or for dev:
-`rsync -avz docs/ phoenix@lxplus.cern.ch:/eos/atlas/atlascerngroupdisk/proj-phoenixatlas/www/atlas-dev`
+`rsync -avz docs/ lxplus.cern.ch:/eos/atlas/atlascerngroupdisk/proj-phoenixatlas/www/atlas-dev`
 
 which is accessible at https://phoenixatlastest.web.cern.ch
 
