@@ -31,7 +31,7 @@ Once you have Node.js and yarn set up you can run this command to install the de
 
 ```sh
 yarn install
-# For macOS Ventura you may need to specify C++ version, e.g. yarn install -std=c++17
+# For macOS you need to make sure you have done: brew install pkg-config cairo pango libpng jpeg giflib librsvg pixman
 ```
 
 To run in development mode:
