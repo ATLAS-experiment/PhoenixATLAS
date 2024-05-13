@@ -13,7 +13,9 @@ PhoenixATLAS is also used to display recent collisions on the [ATLAS Live Event 
   * [Include in a web blog or article](./guides/phoenix-iframe.md)
 * Additionally, for PhoenixATLAS we have some example events which can be reached through the `Event Browser` popup, selectable on the far right of the bottom menu (highlighted in red below):
 <img width="1280" alt="Screenshot 2023-06-01 at 13 15 47" src="https://github.com/ATLAS-experiment/PhoenixATLAS/assets/6764617/ec5cacf4-92b8-4ea7-9199-cabbb0e1601f">
-* The geometry version can be selected by adding the choice to the URL e.g. `https://phoenixatlas.web.cern.ch/PhoenixATLAS/?geom=run4Full. All possible options are shown in [atlas.component.ts](https://github.com/ATLAS-experiment/PhoenixATLAS/blob/main/src/app/pages/atlas/atlas.component.ts#L83)
+
+* The geometry version can be selected by adding the choice to the URL e.g. https://phoenixatlas.web.cern.ch/PhoenixATLAS/?geom=run4Full.
+  * All possible options are shown in [atlas.component.ts](https://github.com/ATLAS-experiment/PhoenixATLAS/blob/main/src/app/pages/atlas/atlas.component.ts)
 * And you can use of course use [PhoenixATLAS](https://phoenixatlas.web.cern.ch/PhoenixATLAS/) to open your own files using the `File upload` dialog (third from right in the screenshot above). PhoenixATLAS supports `json` ( written out by the [DumpEventDataToJSON](https://gitlab.cern.ch/atlas/athena/-/tree/master/Event/DumpEventDataToJSON) algorithm), or [JiveXML](https://twiki.cern.ch/twiki/bin/view/AtlasComputing/JiveXML), as used by [Atlantis](https://twiki.cern.ch/twiki/bin/view/AtlasComputing/Atlantis).
 
 ## Tips for developers
