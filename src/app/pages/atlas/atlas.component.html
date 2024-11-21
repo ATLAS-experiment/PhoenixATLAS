@@ -1,6 +1,7 @@
 <app-loader [loaded]="loaded" [progress]="loadingProgress"></app-loader>
 <app-nav></app-nav>
-<app-ui-menu [eventDataImportOptions]="['JSON', 'JIVEXML', 'ZIP']">
+<app-ui-menu [eventDataImportOptions]>
+  
   <app-event-data-explorer [apiURL]="apiURL"></app-event-data-explorer>
 </app-ui-menu>
 <app-embed-menu></app-embed-menu>

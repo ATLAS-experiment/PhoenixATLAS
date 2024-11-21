@@ -6,7 +6,7 @@ import {
   PresetView,
   StateManager,
 } from 'phoenix-event-display';
-import { EventDisplayService } from 'phoenix-ui-components';
+import { EventDataFormat, EventDataImportOption, EventDisplayService } from 'phoenix-ui-components';
 import { environment } from '../../../environments/environment';
 import { getUrlOptions } from '../../functions/url-options';
 import eventConfig from '../../../event-config.json';
@@ -21,6 +21,11 @@ import phoenixMenuConfigR4 from '../../../assets/files/config/run4.json';
 export class ATLASComponent implements OnInit {
   apiURL = '../api/read-files.php';
   phoenixMenuRoot = new PhoenixMenuNode('Phoenix Menu', 'phoenix-menu');
+  eventDataImportOptions: EventDataImportOption[] = [
+    EventDataFormat.JSON,
+    EventDataFormat.JIVEXML,
+    EventDataFormat.ZIP,
+  ];
   loaded = false;
   loadingProgress = 0;
 
