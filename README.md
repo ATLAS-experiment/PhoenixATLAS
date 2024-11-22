@@ -46,6 +46,11 @@ This will start Phoenix ATLAS locally which you can access through the URL [http
 
 Remember that this is using a local app, and so if you want to update the base configuration then you will need to edit this (i.e. if you want to change the geometry, or the configuration).
 
+N.B. To clean up the build directory, you can use:
+```sh
+git clean -fdx
+```
+
 ### Updating to the newest version of Phoenix
 This can be done with e.g.: 
 ```sh
