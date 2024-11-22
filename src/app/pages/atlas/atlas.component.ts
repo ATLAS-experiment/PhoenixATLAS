@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
   Configuration,
-  PhoenixLoader,
+  JiveXMLLoader,
   PhoenixMenuNode,
   PresetView,
   StateManager,
@@ -47,7 +47,11 @@ export class ATLASComponent implements OnInit {
 
     // Define the configuration
     const configuration: Configuration = {
-      eventDataLoader: new PhoenixLoader(),
+      eventDataLoader: new JiveXMLLoader([
+        'CombinedMuonTracks',
+        'MuonSpectrometerTracks',
+        'Muons_xAOD',
+      ]),
       presetViews: [
         new PresetView('Left View', [0, 0, -12000], [0, 0, 0], 'left-cube'),
         new PresetView('Center View', [-500, 12000, 0], [0, 0, 0], 'top-cube'),
