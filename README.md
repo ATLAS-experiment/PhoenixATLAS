@@ -70,7 +70,7 @@ You can deploy Phoenix with the command:
 yarn deploy
 ```
 
-This will put a static production/build version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.\
+This will put a static production/build version of Phoenix ATLAS in the `./docs` directory which you can copy to your server.
 For example with the command: `rsync -avz docs/ lxplus.cern.ch:/eos/atlas/atlascerngroupdisk/proj-phoenixatlas/www/atlas`
 
 This is accessible at https://phoenixatlas.web.cern.ch/PhoenixATLAS
