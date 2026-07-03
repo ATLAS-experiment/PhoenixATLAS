@@ -14,9 +14,10 @@ import phoenixMenuConfigR3 from '../../../assets/files/config/phoenix-config.jso
 import phoenixMenuConfigR4 from '../../../assets/files/config/run4.json';
 
 @Component({
-  selector: 'atlas-experiment',
-  templateUrl: './atlas.component.html',
-  styleUrls: [],
+    selector: 'atlas-experiment',
+    templateUrl: './atlas.component.html',
+    styleUrls: [],
+    standalone: false
 })
 export class ATLASComponent implements OnInit {
   apiURL = '../api/read-files.php';
