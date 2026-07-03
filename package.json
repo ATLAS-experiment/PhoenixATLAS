@@ -22,8 +22,8 @@
     "@angular/platform-browser-dynamic": "20.3.25",
     "@angular/router": "20.3.25",
     "check-dependencies": "^1.1.0",
-    "phoenix-event-display": "^3.0.3",
-    "phoenix-ui-components": "^3.0.1",
+    "phoenix-event-display": "^4.0.0",
+    "phoenix-ui-components": "^4.0.1",
     "rxjs": "^7.8.0",
     "tslib": "^2.5.0",
     "zone.js": "~0.15.1"

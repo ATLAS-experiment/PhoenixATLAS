@@ -56,7 +56,18 @@
               "@tweenjs/tween.js",
               "qrcode"
             ],
-            "externalDependencies": ["jsdom", "tmp"],
+            "externalDependencies": [
+              "jsdom",
+              "tmp",
+              "canvas",
+              "gl",
+              "mathjax",
+              "xhr2",
+              "zlib",
+              "fs",
+              "node:worker_threads",
+              "@resvg/resvg-js"
+            ],
             "scripts": [],
             "extractLicenses": false,
             "sourceMap": true,
