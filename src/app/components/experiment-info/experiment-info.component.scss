@@ -1,0 +1,49 @@
+.experimentInfo {
+  position: absolute;
+  top: 5rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-family: 'Courier New', 'Lucida Console', monospace;
+  cursor: move;
+}
+
+.experimentLogoWrapper {
+  width: 9rem;
+  margin-bottom: 0.5rem;
+
+  .experimentLogo {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.textInfo {
+  text-align: center;
+
+  p {
+    color: white;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    user-select: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .experimentInfo {
+    top: 4rem;
+    max-width: 40%;
+  }
+
+  .experimentLogoWrapper {
+    height: 4rem;
+  }
+
+  .textInfo {
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+<div id="experimentInfo" class="experimentInfo" cdkDrag cdkDragBoundary="body">
+  <a
+    class="experimentLogoWrapper"
+    target="_blank"
+    rel="noopener noreferrer"
+    *ngIf="url"
+    [href]="url"
+  >
+    <img class="experimentLogo" [src]="logo" alt="" />
+  </a>
+  <div class="textInfo">
+    <p *ngFor="let field of runEventFields">
+      <b>{{ field.label }}: </b>{{ field.value }}
+    </p>
+    <p *ngIf="dateTime">{{ dateTime }}</p>
+  </div>
+</div>
