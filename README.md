@@ -62,6 +62,18 @@ yarn upgrade-interactive
 ```
 to upgrade many dependencies at the same time (see the yarn [https://classic.yarnpkg.com/lang/en/docs/cli/upgrade-interactive/](documentation) for more details on this command).
 
+**After upgrading, check for missing icons.** `phoenix-ui-components` ships no icon assets of its own - it expects the consuming app to supply its own copy under `src/assets/icons/`. A phoenix update that adds new UI panels/controls will reference new icon files this repo doesn't have yet, which only shows up as 404s when you actually run the app (not as a build error), so:
+
+1. Run `yarn start`, open the app, and check the browser console/network tab for 404s under `assets/icons/`.
+2. For each missing `<icon-name>.svg`, fetch it from [HSF/phoenix's reference app](https://github.com/HSF/phoenix/tree/main/packages/phoenix-ng/projects/phoenix-app/src/assets/icons), e.g.:
+   ```sh
+   curl -O https://raw.githubusercontent.com/HSF/phoenix/main/packages/phoenix-ng/projects/phoenix-app/src/assets/icons/<icon-name>.svg
+   mv <icon-name>.svg src/assets/icons/
+   ```
+3. Restart `yarn start` (the dev server only copies `assets/` at startup, so newly added icon files won't be picked up without a restart) and confirm the 404s are gone.
+
+`phoenix-ui-components` does not ship any icon assets in its npm package - it expects the consuming app to provide its own copy under `src/assets/icons/`. If a phoenix update adds new UI panels/controls, it will reference new icon files that this repo doesn't have yet, which only shows up as 404s when actually running the app (not as a build error). After upgrading, run the app and check the browser console for 404s under `assets/icons/`, then copy any missing `.svg` files from [HSF/phoenix's reference app assets](https://github.com/HSF/phoenix/tree/main/packages/phoenix-ng/projects/phoenix-app/src/assets/icons) into `src/assets/icons/`.
+
 ### Deployment
 
 You can deploy Phoenix with the command:
