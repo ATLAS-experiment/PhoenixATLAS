@@ -95,6 +95,12 @@ which is accessible at https://phoenixatlastest.web.cern.ch
 The following shows how to roll a new version of PhoenixATLAS, with a dedicated event as default.
 * [Deploy with a specific event](./guides/deploy-specific-event.md)
 
+To check the test version, here are links to the briefing event displays mentioned above, and the same links but on the test server
+
+| Event | Link to production | Link to test |
+| [W and Z boson](https://atlas.cern/Updates/Briefing/WZ-properties-milestone) | [Production](https://phoenixatlas.web.cern.ch/PhoenixATLAS/?file=data%2FBriefings%2FWmunu.xml&amp;theme=dark&amp;type=jivexml&amp;config=data%2FBriefings%2Frun354396_evt870863902.json) | [Dev](https://phoenixatlastest.web.cern.ch/PhoenixATLAS/?file=data%2FBriefings%2FWmunu.xml&amp;theme=dark&amp;type=jivexml&amp;config=data%2FBriefings%2Frun354396_evt870863902.json) | 
+| [Dark matter](https://atlas.cern/Updates/Briefing/Semi-Visible-Jets) | [Production]([https://phoenixatlas.web.cern.ch/PhoenixATLAS/?file=data%2FBriefings%2FWmunu.xml&amp;theme=dark&amp;type=jivexml&amp;config=data%2FBriefings%2Frun354396_evt870863902.json](https://phoenixatlas.web.cern.ch/PhoenixATLAS/?file=data%2FBriefings%2FSVJT.xml&amp;theme=dark&amp;type=jivexml&amp;config=data%2FBriefings%2Frun299184_evt439826223.json)) | [Dev](https://phoenixatlastest.web.cern.ch/PhoenixATLAS/?file=data%2FBriefings%2FSVJT.xml&amp;theme=dark&amp;type=jivexml&amp;config=data%2FBriefings%2Frun299184_evt439826223.json)
+
 ## Useful guides
 
 * [Complete user guide](https://github.com/HSF/phoenix/blob/master/guides/users.md)
