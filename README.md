@@ -100,7 +100,7 @@ To check the test version, here are links to the briefing event displays mention
 | Event | Link to production | Link to test |
 | ----- | ------------------ | ------------ |
 | [W and Z boson](https://atlas.cern/Updates/Briefing/WZ-properties-milestone) | [Production](https://phoenixatlas.web.cern.ch/PhoenixATLAS/?file=data%2FBriefings%2FWmunu.xml&amp;theme=dark&amp;type=jivexml&amp;config=data%2FBriefings%2Frun354396_evt870863902.json) | [Dev](https://phoenixatlastest.web.cern.ch/PhoenixATLAS/?file=data%2FBriefings%2FWmunu.xml&amp;theme=dark&amp;type=jivexml&amp;config=data%2FBriefings%2Frun354396_evt870863902.json) | 
-| [Dark matter](https://atlas.cern/Updates/Briefing/Semi-Visible-Jets) | [Production](https://phoenixatlas.web.cern.ch/PhoenixATLAS/?file=data%2FBriefings%2FSVJT.xml&amp;theme=dark&amp;type=jivexml&amp;config=data%2FBriefings%2Frun299184_evt439826223.json) | [Dev](https://phoenixatlastest.web.cern.ch/?file=data%2FBriefings%2FSVJT.xml&amp;theme=dark&amp;type=jivexml&amp;config=data%2FBriefings%2Frun299184_evt439826223.json)
+| [Dark matter](https://atlas.cern/Updates/Briefing/Semi-Visible-Jets) | [Production](https://phoenixatlas.web.cern.ch/PhoenixATLAS/?file=data%2FBriefings%2FSVJT.xml&amp;theme=dark&amp;type=jivexml&amp;config=data%2FBriefings%2Frun299184_evt439826223.json) | [Dev](https://phoenixatlastest.web.cern.ch/PhoenixATLAS/?file=data%2FBriefings%2FSVJT.xml&amp;theme=dark&amp;type=jivexml&amp;config=data%2FBriefings%2Frun299184_evt439826223.json)
 
 ## Useful guides
 
