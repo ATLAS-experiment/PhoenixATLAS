@@ -4484,10 +4484,10 @@ phoenix-event-display@^4.0.0:
     stats-js "^1.0.1"
     three "~0.184.0"
 
-phoenix-ui-components@^4.0.1:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-4.2.0.tgz#b2b84dd427fe577da05e2cbd67ce9e97a32dd4cc"
-  integrity sha512-qFwJPh1Zs9+i7HH3fwVsMm8QKdAdyDAGCV1Q6+26vBjV9sjHRmtULDHg8gYwmzL1LhR+e09Xdjr4DRH4lax+8g==
+phoenix-ui-components@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/phoenix-ui-components/-/phoenix-ui-components-4.2.1.tgz#3b1f1fe060f7b290b4cc99ba99d8346b56f00ae6"
+  integrity sha512-9CN1JhhHyzfxM8aFcM36auS6evOQyjqSxm87MhW19pPqxNoltZ1oW5re9Zh1Qa4QUHlMdQuFLBGl7fV5y01UMg==
   dependencies:
     "@angular/animations" "^20.3.28"
     "@angular/cdk" "^20.2.14"
@@ -4495,7 +4495,9 @@ phoenix-ui-components@^4.0.1:
     "@angular/material" "^20.2.14"
     "@angular/platform-browser" "^20.3.28"
     css-element-queries "^1.2.3"
+    jszip "^3.10.1"
     qrcode "1.5.4"
+    recordrtc "^5.6.2"
     rxjs "^7.8.2"
     three "~0.184.0"
     tslib "^2.8.1"
@@ -4706,6 +4708,11 @@ readdirp@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-4.0.2.tgz#388fccb8b75665da3abffe2d8f8ed59fe74c230a"
   integrity sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==
+
+recordrtc@^5.6.2:
+  version "5.6.2"
+  resolved "https://registry.yarnpkg.com/recordrtc/-/recordrtc-5.6.2.tgz#48fc214b35084973ccce82c6251198b5742bc327"
+  integrity sha512-1QNKKNtl7+KcwD1lyOgP3ZlbiJ1d0HtXnypUy7yq49xEERxk31PHvE9RCciDrulPCY7WJ+oz0R9hpNxgsIurGQ==
 
 reflect-metadata@^0.2.0:
   version "0.2.1"
