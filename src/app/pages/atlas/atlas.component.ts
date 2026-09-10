@@ -89,7 +89,7 @@ export class ATLASComponent implements OnInit {
       geometryVersion = 'run3Full';
     }
 
-    let defaultConfig = phoenixMenuConfigR3;
+    let defaultConfig: { [key: string]: any } = phoenixMenuConfigR3;
     switch (geometryVersion) {
       case 'run2Simple':
       case 'simple':
