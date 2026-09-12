@@ -52,6 +52,8 @@ export class ATLASComponent implements OnInit {
         'CombinedMuonTracks',
         'MuonSpectrometerTracks',
         'Muons_xAOD',
+        'MSOnlyExtrapolatedTracks',
+        'ExtrapolatedMuonTracks',
       ]),
       presetViews: [
         new PresetView('Left View', [0, 0, -12000], [0, 0, 0], 'left-cube'),
